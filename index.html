@@ -1,0 +1,2157 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TOÁN 9 HẢI PHÒNG – LUYỆN THI VÀO LỚP 10 - THẦY NGUYỄN VĂN THOAN</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- KaTeX CSS & JS với cdnjs ổn định cho Google Sites -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.8/katex.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.8/katex.min.js"></script>
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: #f8fafc;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    .katex { font-size: 1.05em; }
+    /* Thanh cuộn mảnh */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+  </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen">
+
+  <div id="app" class="flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-xs">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <!-- Logo chính thức Trường THCS Trường Tân 2 - TP Hải Phòng -->
+          <div class="w-11 h-11 sm:w-12 sm:h-12 shrink-0 drop-shadow-xs transition-transform hover:scale-105 duration-200">
+            <svg viewBox="0 0 200 200" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <path id="textPathUpper" d="M 28,100 A 72,72 0 1,1 172,100" />
+                <path id="textPathLower" d="M 172,100 A 72,72 0 0,1 28,100" />
+              </defs>
+              <!-- Viền ngoài & nền đỏ trường học chuẩn nhận diện -->
+              <circle cx="100" cy="100" r="98" fill="#c5282f" stroke="#ffffff" stroke-width="2"/>
+              <circle cx="100" cy="100" r="93" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+              <circle cx="100" cy="100" r="62" fill="#ffffff"/>
+              <circle cx="100" cy="100" r="58.5" fill="#c5282f"/>
+              
+              <!-- Dòng chữ vòng cung phía trên: TRƯỜNG THCS TRƯỜNG TÂN 2 -->
+              <text fill="#ffffff" font-size="13" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="900" letter-spacing="1.2">
+                <textPath href="#textPathUpper" startOffset="50%" text-anchor="middle">
+                  TRƯỜNG THCS TRƯỜNG TÂN 2
+                </textPath>
+              </text>
+              
+              <!-- Dòng chữ vòng cung phía dưới: THÀNH PHỐ HẢI PHÒNG -->
+              <text fill="#ffffff" font-size="11.5" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="800" letter-spacing="1.8">
+                <textPath href="#textPathLower" startOffset="50%" text-anchor="middle">
+                  THÀNH PHỐ HẢI PHÒNG
+                </textPath>
+              </text>
+              
+              <!-- Biểu tượng hoa phượng đỏ hai bên hông -->
+              <!-- Hoa bên trái -->
+              <g transform="translate(20, 100) scale(0.9)">
+                <circle cx="-1.5" cy="0" r="2.2" fill="#ffffff"/>
+                <circle cx="-5" cy="-3.5" r="2.6" fill="#ffffff"/>
+                <circle cx="2" cy="-3.5" r="2.6" fill="#ffffff"/>
+                <circle cx="-5" cy="3.5" r="2.6" fill="#ffffff"/>
+                <circle cx="2" cy="3.5" r="2.6" fill="#ffffff"/>
+                <circle cx="-6.5" cy="0" r="2.6" fill="#ffffff"/>
+              </g>
+              <!-- Hoa bên phải -->
+              <g transform="translate(180, 100) scale(0.9)">
+                <circle cx="1.5" cy="0" r="2.2" fill="#ffffff"/>
+                <circle cx="-2" cy="-3.5" r="2.6" fill="#ffffff"/>
+                <circle cx="5" cy="-3.5" r="2.6" fill="#ffffff"/>
+                <circle cx="-2" cy="3.5" r="2.6" fill="#ffffff"/>
+                <circle cx="5" cy="3.5" r="2.6" fill="#ffffff"/>
+                <circle cx="6.5" cy="0" r="2.6" fill="#ffffff"/>
+              </g>
+
+              <!-- Biểu tượng cuốn sách và chữ cách điệu trung tâm (màu trắng) -->
+              <!-- Gáy sách & trang sách mở phía trên -->
+              <path d="M 62,68 C 76,73 88,68 100,75 C 112,68 124,73 138,68 L 138,74 C 124,79 112,74 100,81 C 88,74 76,79 62,74 Z" fill="#ffffff"/>
+              
+              <!-- Khối đồ họa chữ M/T & Tháp tri thức cách điệu ở giữa -->
+              <path d="M 62,81 L 138,81 L 138,91 L 105.5,91 L 105.5,152 L 94.5,152 L 94.5,91 L 62,91 Z" fill="#ffffff"/>
+              <path d="M 71,97 L 90.5,97 L 90.5,142 L 71,142 L 71,133 L 81.5,133 L 81.5,106 L 71,106 Z" fill="#ffffff"/>
+              <path d="M 129,97 L 109.5,97 L 109.5,142 L 129,142 L 129,133 L 118.5,133 L 118.5,106 L 129,106 Z" fill="#ffffff"/>
+            </svg>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="inline-block px-2 py-0.5 bg-rose-50 text-rose-700 rounded-md font-black text-[10px] sm:text-[11px] tracking-wide border border-rose-200">
+                THCS TRƯỜNG TÂN 2
+              </span>
+              <h1 class="font-extrabold text-slate-800 text-sm sm:text-base leading-tight">
+                TOÁN 9 HẢI PHÒNG
+              </h1>
+            </div>
+            <p class="text-[11px] text-sky-600 font-semibold uppercase tracking-wider mt-0.5">
+              Luyện thi vào lớp 10 THPT – Thầy Nguyễn Văn Thoan
+            </p>
+          </div>
+        </div>
+
+        <!-- Điều hướng máy tính & tablet -->
+        <nav class="hidden md:flex items-center gap-1 text-xs font-semibold" id="main-nav">
+          <!-- Rendered by JS -->
+        </nav>
+
+        <!-- Thông tin người dùng & Chuyển vai trò -->
+        <div class="flex items-center gap-2">
+          <div class="text-right hidden sm:block">
+            <div id="user-display-name" class="text-xs font-bold text-slate-800">Thầy Nguyễn Văn Thoan</div>
+            <div id="user-display-role" class="text-[10px] uppercase font-semibold text-sky-600">Giáo viên Toán</div>
+          </div>
+          <button id="btn-logout" title="Đăng xuất khỏi hệ thống" onclick="handleLogout()" class="px-2.5 py-1 text-xs bg-rose-50 hover:bg-rose-100 text-rose-700 font-semibold rounded-lg border border-rose-200 transition flex items-center gap-1">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i> Đăng xuất
+          </button>
+        </div>
+      </div>
+      <!-- Menu phụ trên mobile -->
+      <div class="md:hidden flex overflow-x-auto border-t border-slate-100 bg-slate-50 px-2 py-1.5 gap-1 text-xs font-medium" id="mobile-nav">
+      </div>
+    </header>
+
+    <!-- Khu vực nội dung động -->
+    <main class="flex-1 max-w-7xl w-full mx-auto p-3 sm:p-6 lg:p-8" id="main-content">
+      <!-- Sẽ được kết xuất bằng JavaScript thuần tương thích mọi iFrame -->
+    </main>
+  </div>
+
+  <!-- Modal đăng nhập hệ thống -->
+  <div id="login-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/75 backdrop-blur-sm p-4 hidden">
+    <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full overflow-hidden border border-slate-200 animate-in fade-in zoom-in duration-200">
+      <div class="bg-gradient-to-r from-sky-600 to-blue-700 p-6 text-white text-center relative">
+        <!-- Logo trường học trên header của hộp thoại đăng nhập -->
+        <div class="w-16 h-16 mx-auto mb-2 drop-shadow-md">
+          <svg viewBox="0 0 200 200" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <path id="modalTextUpper" d="M 28,100 A 72,72 0 1,1 172,100" />
+              <path id="modalTextLower" d="M 172,100 A 72,72 0 0,1 28,100" />
+            </defs>
+            <circle cx="100" cy="100" r="98" fill="#c5282f" stroke="#ffffff" stroke-width="2"/>
+            <circle cx="100" cy="100" r="93" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+            <circle cx="100" cy="100" r="62" fill="#ffffff"/>
+            <circle cx="100" cy="100" r="58.5" fill="#c5282f"/>
+            <text fill="#ffffff" font-size="13" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" letter-spacing="1.2">
+              <textPath href="#modalTextUpper" startOffset="50%" text-anchor="middle">
+                TRƯỜNG THCS TRƯỜNG TÂN 2
+              </textPath>
+            </text>
+            <text fill="#ffffff" font-size="11.5" font-family="'Segoe UI', Roboto, sans-serif" font-weight="800" letter-spacing="1.8">
+              <textPath href="#modalTextLower" startOffset="50%" text-anchor="middle">
+                THÀNH PHỐ HẢI PHÒNG
+              </textPath>
+            </text>
+            <g transform="translate(20, 100) scale(0.9)">
+              <circle cx="-1.5" cy="0" r="2.2" fill="#ffffff"/>
+              <circle cx="-5" cy="-3.5" r="2.6" fill="#ffffff"/>
+              <circle cx="2" cy="-3.5" r="2.6" fill="#ffffff"/>
+              <circle cx="-5" cy="3.5" r="2.6" fill="#ffffff"/>
+              <circle cx="2" cy="3.5" r="2.6" fill="#ffffff"/>
+              <circle cx="-6.5" cy="0" r="2.6" fill="#ffffff"/>
+            </g>
+            <g transform="translate(180, 100) scale(0.9)">
+              <circle cx="1.5" cy="0" r="2.2" fill="#ffffff"/>
+              <circle cx="-2" cy="-3.5" r="2.6" fill="#ffffff"/>
+              <circle cx="5" cy="-3.5" r="2.6" fill="#ffffff"/>
+              <circle cx="-2" cy="3.5" r="2.6" fill="#ffffff"/>
+              <circle cx="5" cy="3.5" r="2.6" fill="#ffffff"/>
+              <circle cx="6.5" cy="0" r="2.6" fill="#ffffff"/>
+            </g>
+            <path d="M 62,68 C 76,73 88,68 100,75 C 112,68 124,73 138,68 L 138,74 C 124,79 112,74 100,81 C 88,74 76,79 62,74 Z" fill="#ffffff"/>
+            <path d="M 62,81 L 138,81 L 138,91 L 105.5,91 L 105.5,152 L 94.5,152 L 94.5,91 L 62,91 Z" fill="#ffffff"/>
+            <path d="M 71,97 L 90.5,97 L 90.5,142 L 71,142 L 71,133 L 81.5,133 L 81.5,106 L 71,106 Z" fill="#ffffff"/>
+            <path d="M 129,97 L 109.5,97 L 109.5,142 L 129,142 L 129,133 L 118.5,133 L 118.5,106 L 129,106 Z" fill="#ffffff"/>
+          </svg>
+        </div>
+        <h2 class="text-base sm:text-lg font-black tracking-tight">TRƯỜNG THCS TRƯỜNG TÂN 2</h2>
+        <p class="text-sky-100 text-xs mt-0.5">Cổng Luyện thi vào lớp 10 THPT môn Toán – Thầy Thoan</p>
+      </div>
+
+      <div class="p-6 space-y-4">
+        <div id="login-error-msg" class="p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs font-semibold hidden flex items-center gap-2">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span id="login-error-text">Tài khoản hoặc mật khẩu không chính xác!</span>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1.5">Tên đăng nhập / Email:</label>
+          <div class="relative">
+            <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+              <i class="fa-solid fa-user text-xs"></i>
+            </span>
+            <input type="text" id="login-username" placeholder="Nhập tên đăng nhập hoặc email..." class="w-full pl-9 pr-3 py-2.5 text-xs font-semibold rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500 bg-white" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1.5">Mật khẩu:</label>
+          <div class="relative">
+            <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+              <i class="fa-solid fa-lock text-xs"></i>
+            </span>
+            <input type="password" id="login-password" placeholder="Nhập mật khẩu..." class="w-full pl-9 pr-3 py-2.5 text-xs font-semibold rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500 bg-white" />
+          </div>
+        </div>
+
+        <button onclick="handleLoginSubmit()" class="w-full py-3 bg-sky-600 hover:bg-sky-700 text-white font-extrabold text-xs sm:text-sm rounded-xl shadow-md transition flex items-center justify-center gap-2">
+          <i class="fa-solid fa-right-to-bracket"></i> Đăng nhập hệ thống
+        </button>
+
+        <!-- Khuôn viên Trường THCS Trường Tân 2 thay thế bảng hiển thị tài khoản -->
+        <div class="rounded-2xl border border-sky-100 overflow-hidden bg-gradient-to-b from-sky-50/70 to-white shadow-xs">
+          <div class="relative h-32 w-full overflow-hidden bg-slate-100 group">
+            <img 
+              src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=800&q=80" 
+              alt="Trường THCS Trường Tân 2"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              onerror="this.src='https://placehold.co/600x260/0284c7/ffffff?text=TRUONG+THCS+TRUONG+TAN+2'"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/30 to-transparent flex flex-col justify-end p-2.5">
+              <span class="inline-flex items-center gap-1 text-[10px] font-bold text-amber-300 uppercase tracking-wider">
+                <i class="fa-solid fa-school"></i> Ngôi trường thân thiện - Tri thức tương lai
+              </span>
+              <h3 class="text-xs font-black text-white leading-tight">
+                TRƯỜNG THCS TRƯỜNG TÂN 2
+              </h3>
+            </div>
+          </div>
+          <div class="p-2.5 text-[11px] text-slate-600 space-y-1">
+            <div class="flex items-center gap-1.5 font-bold text-sky-800">
+              <i class="fa-solid fa-circle-check text-sky-600 text-xs"></i> Cổng luyện thi Tuyển sinh vào Lớp 10 THPT
+            </div>
+            <p class="text-[10px] text-slate-500 leading-relaxed">
+              Học sinh sử dụng tài khoản và mật khẩu cá nhân do Nhà trường & Thầy Nguyễn Văn Thoan cấp theo danh sách lớp để đăng nhập làm bài.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal thông báo hệ thống an toàn -->
+  <div id="app-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-xs p-4 hidden">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden border border-slate-200">
+      <div id="modal-header" class="p-4 text-white flex items-center justify-between bg-sky-600">
+        <div class="flex items-center gap-2 font-bold text-base" id="modal-title-box">
+          <i class="fa-solid fa-circle-info"></i>
+          <span id="modal-title">Thông báo</span>
+        </div>
+        <button onclick="closeModal()" class="text-white hover:opacity-80"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="p-6 text-slate-700 text-xs sm:text-sm whitespace-pre-line leading-relaxed" id="modal-message"></div>
+      <div class="p-4 bg-slate-50 border-t border-slate-100 flex justify-end gap-2" id="modal-actions">
+        <button onclick="closeModal()" class="px-4 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-200 rounded-lg">Đóng</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Dữ liệu ngân hàng câu hỏi chuẩn Sở Hải Phòng (QĐ 7008/QĐ-SGDĐT)
+    const QUESTION_BANK = [
+      // PHẦN I
+      {
+        id: "HP-P1-001",
+        part: 1,
+        topic: "Số và Đại số",
+        subTopic: "Căn bậc hai số học",
+        difficulty: "Nhận biết",
+        points: 0.25,
+        content: "Căn bậc hai số học của 9 là:",
+        options: ["-3", "3", "\\(\\pm 3\\)", "81"],
+        correctAnswer: "B",
+        solution: "Theo định nghĩa, căn bậc hai số học của số dương a là số không âm x sao cho x² = a. Do 3 > 0 và 3² = 9 nên kết quả là 3.",
+        source: "Đề minh họa Hải Phòng - Đề 01",
+        status: "Đã duyệt"
+      },
+      {
+        id: "HP-P1-002",
+        part: 1,
+        topic: "Số và Đại số",
+        subTopic: "Căn thức bậc hai",
+        difficulty: "Thông hiểu",
+        points: 0.25,
+        content: "Với \\(a > 0, b > 0\\) thì \\(\\sqrt{\\frac{a}{b}}\\) bằng:",
+        options: ["\\(\\frac{a}{b}\\)", "2", "\\(\\frac{\\sqrt{ab}}{b}\\)", "\\(\\frac{a}{\\sqrt{b}}\\)|"],
+        correctAnswer: "C",
+        solution: "Trục căn thức ở mẫu: \\(\\sqrt{\\frac{a}{b}} = \\frac{\\sqrt{a}}{\\sqrt{b}} = \\frac{\\sqrt{a}\\cdot\\sqrt{b}}{\\sqrt{b}\\cdot\\sqrt{b}} = \\frac{\\sqrt{ab}}{b}\\).",
+        source: "Đề mẫu Hải Phòng - Đề 01",
+        status: "Đã duyệt"
+      },
+      {
+        id: "HP-P1-003",
+        part: 1,
+        topic: "Số và Đại số",
+        subTopic: "Hàm số & Chuyển động đều",
+        difficulty: "Nhận biết",
+        points: 0.25,
+        content: "Biểu thức liên hệ giữa Vận tốc (v), Quãng đường (S), và Thời gian (t) của chuyển động đều là:",
+        options: ["\\(S = \\frac{v}{t}\\)", "\\(v = S \\cdot t\\)", "\\(S = v \\cdot t\\)", "\\(t = \\frac{v}{S}\\)"],
+        correctAnswer: "C",
+        solution: "Công thức quãng đường chuyển động đều: \\(S = v \\cdot t\\).",
+        source: "Đề mẫu Hải Phòng - Đề 01",
+        status: "Đã duyệt"
+      },
+      {
+        id: "HP-P1-004",
+        part: 1,
+        topic: "Số và Đại số",
+        subTopic: "Bất đẳng thức & Bất phương trình",
+        difficulty: "Vận dụng",
+        points: 0.25,
+        content: "Cho tấm nhôm hình vuông cạnh 12 cm. Người ta cắt ở 4 góc 4 hình vuông bằng nhau cạnh \\(x\\) cm rồi gập lại làm hộp không nắp. Thể tích hộp lớn nhất khi \\(x\\) bằng:",
+        options: ["\\(x = 1\\text{ cm}\\)", "\\(x = 3\\text{ cm}\\)", "\\(x = 4\\text{ cm}\\)", "\\(x = 2\\text{ cm}\\)"],
+        correctAnswer: "D",
+        solution: "Thể tích \\(V = x(12-2x)^2 = 4x(6-x)^2\\). Áp dụng AM-GM, \\(V\\) lớn nhất khi \\(x = 2\\text{ cm}\\).",
+        source: "Đề mẫu Hải Phòng - Đề 01",
+        status: "Đã duyệt"
+      },
+      {
+        id: "HP-P1-005",
+        part: 1,
+        topic: "Hình học và đo lường",
+        subTopic: "Hình trụ - Hình nón - Hình cầu",
+        difficulty: "Nhận biết",
+        points: 0.25,
+        content: "Cho hình nón có bán kính đáy \\(R = 3\\text{ cm}\\) và đường sinh \\(l = 5\\text{ cm}\\). Diện tích xung quanh của hình nón là:",
+        options: ["\\(25\\pi\\text{ cm}^2\\)", "\\(12\\pi\\text{ cm}^2\\)", "\\(20\\pi\\text{ cm}^2\\)", "\\(15\\pi\\text{ cm}^2\\)"],
+        correctAnswer: "D",
+        solution: "\\(S_{xq} = \\pi R l = \\pi \\cdot 3 \\cdot 5 = 15\\pi\\text{ cm}^2\\).",
+        source: "Đề mẫu Hải Phòng - Đề 01",
+        status: "Đã duyệt"
+      },
+      {
+        id: "HP-P1-006",
+        part: 1,
+        topic: "Hình học và đo lường",
+        subTopic: "Hệ thức lượng trong tam giác vuông",
+        difficulty: "Thông hiểu",
+        points: 0.25,
+        content: "Cho tam giác \\(ABC\\) vuông tại \\(A\\) có góc \\(C = 30^\\circ\\), cạnh \\(AB = 5\\text{ cm}\\). Độ dài cạnh huyền \\(BC\\) bằng:",
+        options: ["\\(5\\text{ cm}\\)", "\\(10\\text{ cm}\\)", "\\(5\\sqrt{3}\\text{ cm}\\)", "\\(10\\sqrt{3}\\text{ cm}\\)"],
+        correctAnswer: "B",
+        solution: "\\(\\sin C = \\frac{AB}{BC} \\Rightarrow BC = \\frac{5}{\\sin 30^\\circ} = 10\\text{ cm}\\).",
+        source: "Đề mẫu Hải Phòng - Đề 01",
+        status: "Đã duyệt"
+      },
+      {
+        id: "HP-P1-007",
+        part: 1,
+        topic: "Hình học và đo lường",
+        subTopic: "Đường tròn và góc",
+        difficulty: "Nhận biết",
+        points: 0.25,
+        content: "Công thức tính diện tích hình quạt tròn bán kính \\(R\\), cung \\(n^\\circ\\) là:",
+        options: ["\\(\\frac{\\pi R n}{180}\\)", "\\(\\frac{\\pi R^2 n}{180}\\)", "\\(\\frac{\\pi R^2 n}{360}\\)", "\\(\\frac{\\pi R n}{360}\\)"],
+        correctAnswer: "C",
+        solution: "Công thức: \\(S_q = \\frac{\\pi R^2 n}{360}\\).",
+        source: "Đề mẫu Hải Phòng - Đề 01",
+        status: "Đã duyệt"
+      },
+      {
+        id: "HP-P1-008",
+        part: 1,
+        topic: "Hình học và đo lường",
+        subTopic: "Mặt cầu & Đường tròn giao tuyến",
+        difficulty: "Thông hiểu",
+        points: 0.25,
+        content: "Khi cắt một mặt cầu tâm \\(O\\), bán kính \\(R\\) bởi một mặt phẳng bất kỳ có khoảng cách \\(d < R\\) thì mặt cắt thu được là:",
+        options: ["Mặt cầu", "Đường tròn", "Hình vuông", "Hình elip"],
+        correctAnswer: "B",
+        solution: "Mặt phẳng cắt mặt cầu luôn tạo ra một đường tròn có bán kính \\(r = \\sqrt{R^2 - d^2}\\).",
+        source: "Đề mẫu Hải Phòng - Đề 01",
+        status: "Đã duyệt"
+      },
+      {
+        id: "HP-P1-009",
+        part: 1,
+        topic: "Số và Đại số",
+        subTopic: "Phương trình quy về bậc nhất",
+        difficulty: "Thông hiểu",
+        points: 0.25,
+        content: "Số nghiệm của phương trình \\((x-3)(x^2+4) = 0\\) trên tập số thực là:",
+        options: ["2", "0", "1", "3"],
+        correctAnswer: "C",
+        solution: "Vì \\(x^2 + 4 > 0\\) với mọi \\(x\\) nên phương trình chỉ có 1 nghiệm \\(x = 3\\).",
+        source: "Đề mẫu Hải Phòng - Đề 02",
+        status: "Đã duyệt"
+      },
+      {
+        id: "HP-P1-010",
+        part: 1,
+        topic: "Thống kê và xác suất",
+        subTopic: "Không gian mẫu",
+        difficulty: "Nhận biết",
+        points: 0.25,
+        content: "Số phần tử của không gian mẫu của một phép thử ngẫu nhiên thường được kí hiệu là:",
+        options: ["\\(\\Omega\\)", "\\(n\\)", "\\(n(E)\\)", "\\(n(\\Omega)\\)"],
+        correctAnswer: "D",
+        solution: "Kí hiệu số phần tử không gian mẫu là \\(n(\\Omega)\\).",
+        source: "Đề mẫu Hải Phòng - Đề 02",
+        status: "Đã duyệt"
+      },
+      {
+        id: "HP-P1-011",
+        part: 1,
+        topic: "Thống kê và xác suất",
+        subTopic: "Xác suất của biến cố",
+        difficulty: "Thông hiểu",
+        points: 0.25,
+        content: "Rút ngẫu nhiên một thẻ trong hộp có 30 thẻ ghi số từ 1 đến 30. Xác suất của biến cố: 'Số xuất hiện chia hết cho 5' là:",
+        options: ["\\(\\frac{1}{6}\\)", "\\(\\frac{1}{5}\\)", "\\(\\frac{1}{30}\\)", "\\(\\frac{6}{25}\\)"],
+        correctAnswer: "B",
+        solution: "Các số chia hết cho 5 là {5, 10, 15, 20, 25, 30} gồm 6 số. Xác suất \\(P = \\frac{6}{30} = \\frac{1}{5}\\).",
+        source: "Đề mẫu Hải Phòng - Đề 02",
+        status: "Đã duyệt"
+      },
+      {
+        id: "HP-P1-012",
+        part: 1,
+        topic: "Thống kê và xác suất",
+        subTopic: "Tần số mẫu số liệu",
+        difficulty: "Nhận biết",
+        points: 0.25,
+        content: "Kết quả điểm của 40 sản phẩm: Điểm 7 (10), Điểm 8 (8), Điểm 9 (13), Điểm 10 (9). Khi vẽ biểu đồ cột tần số tương đối, cột nào cao nhất?",
+        options: ["Điểm 7", "Điểm 8", "Điểm 9", "Điểm 10"],
+        correctAnswer: "C",
+        solution: "Điểm 9 có tần số cao nhất (13) nên cột biểu diễn cao nhất.",
+        source: "Đề mẫu Hải Phòng - Đề 01",
+        status: "Đã duyệt"
+      },
+
+      // PHẦN II (Đúng/Sai)
+      {
+        id: "HP-P2-001",
+        part: 2,
+        topic: "Số và Đại số",
+        subTopic: "Căn bậc hai số học",
+        difficulty: "Thông hiểu",
+        points: 1.0,
+        content: "Xét các khẳng định về đưa thừa số vào trong dấu căn:",
+        subQuestions: [
+          { label: "a", text: "Với \\(a \\ge 0, b \\ge 0\\) thì \\(a\\sqrt{b} = \\sqrt{a^2 b}\\)", correct: true },
+          { label: "b", text: "Với \\(a < 0, b \\ge 0\\) thì \\(a\\sqrt{b} = -\\sqrt{a^2 b}\\)", correct: true },
+          { label: "c", text: "Với \\(x > 0\\) thì \\(3x\\sqrt{\\frac{2}{x}} = \\sqrt{18x}\\)", correct: true },
+          { label: "d", text: "Với \\(x < 0\\) thì \\(x\\sqrt{5} = \\sqrt{5x^2}\\)", correct: false }
+        ],
+        solution: "Ý d sai vì khi x < 0 thì đưa vào căn phải có dấu trừ đằng trước: -√(5x²).",
+        source: "Đề cấu trúc chuẩn Sở Hải Phòng - Đề 01",
+        status: "Đã duyệt"
+      },
+      {
+        id: "HP-P2-002",
+        part: 2,
+        topic: "Số và Đại số",
+        subTopic: "Hàm số & Phương trình thực tế",
+        difficulty: "Vận dụng",
+        points: 1.0,
+        content: "Cho hình lăng trụ đứng có đáy là hình vuông cạnh \\(x\\) (cm) và chiều cao là 8 cm.",
+        subQuestions: [
+          { label: "a", text: "Công thức tính thể tích \\(V\\) của lăng trụ theo \\(x\\) là \\(V = 8x^2\\)", correct: true },
+          { label: "b", text: "Hàm số \\(V = 8x^2\\) là hàm số bậc hai có đồ thị đi qua gốc tọa độ", correct: true },
+          { label: "c", text: "Nếu độ dài cạnh đáy \\(x = 5\\text{ cm}\\) thì thể tích là \\(200\\text{ cm}^3\\)", correct: true },
+          { label: "d", text: "Nếu độ dài cạnh đáy tăng lên hai lần thì thể tích tăng lên hai lần", correct: false }
+        ],
+        solution: "Ý d sai vì thể tích tỷ lệ với x², khi x tăng 2 lần thì V tăng 4 lần.",
+        source: "Đề cấu trúc chuẩn Sở Hải Phòng - Đề 01",
+        status: "Đã duyệt"
+      },
+      {
+        id: "HP-P2-003",
+        part: 2,
+        topic: "Hình học và đo lường",
+        subTopic: "Đường tròn và góc",
+        difficulty: "Vận dụng",
+        points: 1.0,
+        content: "Cho đường tròn nội tiếp tam giác đều \\(ABC\\) cạnh bằng 6 cm, đường cao \\(AH\\):",
+        subQuestions: [
+          { label: "a", text: "Độ dài đoạn thẳng \\(BH = 3\\text{ cm}\\)", correct: true },
+          { label: "b", text: "Chiều cao \\(AH = 3\\sqrt{3}\\text{ cm}\\)", correct: true },
+          { label: "c", text: "Bán kính đường tròn nội tiếp bằng \\(2\\sqrt{3}\\text{ cm}\\)", correct: false },
+          { label: "d", text: "Chu vi đường tròn nội tiếp bằng \\(2\\sqrt{3}\\pi\\text{ cm}\\)", correct: true }
+        ],
+        solution: "Bán kính r = AH/3 = √3 cm, chu vi C = 2πr = 2√3π cm.",
+        source: "Đề cấu trúc chuẩn Sở Hải Phòng - Đề 01",
+        status: "Đã duyệt"
+      },
+      {
+        id: "HP-P2-004",
+        part: 2,
+        topic: "Thống kê và xác suất",
+        subTopic: "Không gian mẫu",
+        difficulty: "Thông hiểu",
+        points: 1.0,
+        content: "Xếp ngẫu nhiên 5 học sinh A, B, C, D, E ngồi vào một dãy 5 ghế thẳng hàng:",
+        subQuestions: [
+          { label: "a", text: "Hành động trên là một phép thử ngẫu nhiên", correct: true },
+          { label: "b", text: "Kết quả của phép thử là thứ tự vị trí ngồi của 5 học sinh", correct: true },
+          { label: "c", text: "Số phần tử của không gian mẫu là \\(n(\\Omega) = 5\\)", correct: false },
+          { label: "d", text: "Số phần tử của không gian mẫu là \\(n(\\Omega) = 5! = 120\\)", correct: true }
+        ],
+        solution: "Số cách xếp 5 bạn vào 5 ghế là 5! = 120 cách.",
+        source: "Đề cấu trúc chuẩn Sở Hải Phòng - Đề 01",
+        status: "Đã duyệt"
+      },
+
+      // PHẦN III (Trả lời ngắn)
+      {
+        id: "HP-P3-001",
+        part: 3,
+        topic: "Số và Đại số",
+        subTopic: "Hàm số & Phương trình thực tế",
+        difficulty: "Thông hiểu",
+        points: 0.5,
+        content: "Trong tháng đầu một tổ sản xuất được 500 sản phẩm. Sang tháng thứ hai, tổ đó giảm 10% so với tháng đầu. Hỏi tháng thứ hai tổ đó sản xuất được bao nhiêu sản phẩm?",
+        correctAnswer: "450",
+        solution: "500 - 500*10% = 450 sản phẩm.",
+        source: "Đề cấu trúc chuẩn Sở Hải Phòng - Đề 01",
+        status: "Đã duyệt"
+      },
+      {
+        id: "HP-P3-002",
+        part: 3,
+        topic: "Số và Đại số",
+        subTopic: "Hàm số & Phương trình thực tế",
+        difficulty: "Vận dụng",
+        points: 0.5,
+        content: "Một ca nô đi xuôi dòng với vận tốc 40 km/h, đi ngược dòng với vận tốc 30 km/h. Vận tốc của dòng nước là bao nhiêu km/h?",
+        correctAnswer: "5",
+        solution: "Vận tốc nước = (40 - 30) / 2 = 5 km/h.",
+        source: "Đề cấu trúc chuẩn Sở Hải Phòng - Đề 01",
+        status: "Đã duyệt"
+      },
+      {
+        id: "HP-P3-003",
+        part: 3,
+        topic: "Số và Đại số",
+        subTopic: "Cực trị đại số & Bất đẳng thức",
+        difficulty: "Vận dụng cao",
+        points: 0.5,
+        content: "Tìm giá trị nhỏ nhất của biểu thức: \\(P = x^2 - 4x + 24\\).",
+        correctAnswer: "20",
+        solution: "\\(P = (x-2)^2 + 20 \\ge 20\\). GTNN là 20 khi x = 2.",
+        source: "Đề cấu trúc chuẩn Sở Hải Phòng - Đề 01",
+        status: "Đã duyệt"
+      },
+      {
+        id: "HP-P3-004",
+        part: 3,
+        topic: "Hình học và đo lường",
+        subTopic: "Hệ thức lượng trong tam giác vuông",
+        difficulty: "Thông hiểu",
+        points: 0.5,
+        content: "Cho tam giác \\(ABC\\) có \\(AB = 3\\text{ cm}, AC = 4\\text{ cm}, BC = 5\\text{ cm}\\). Số đo góc \\(B\\) xấp xỉ bằng bao nhiêu độ? (Làm tròn đến 2 chữ số thập phân):",
+        correctAnswer: "53.13",
+        solution: "\\(\\cos B = 3/5 = 0.6 \\Rightarrow B \\approx 53.13^\\circ\\).",
+        source: "Đề cấu trúc chuẩn Sở Hải Phòng - Đề 01",
+        status: "Đã duyệt"
+      },
+      {
+        id: "HP-P3-005",
+        part: 3,
+        topic: "Hình học và đo lường",
+        subTopic: "Đường tròn và góc",
+        difficulty: "Vận dụng",
+        points: 0.5,
+        content: "Cho đường tròn \\((O)\\) đường kính \\(BC\\), điểm \\(A\\) thuộc đường tròn. Kẻ tiếp tuyến \\(CI\\), biết bán kính \\(R = 15\\text{ cm}, AB = 18\\text{ cm}\\). Tính độ dài tiếp tuyến \\(AI\\) (cm):",
+        correctAnswer: "20",
+        solution: "Hệ thức lượng cho ta \\(AI = CI = 20\\text{ cm}\\).",
+        source: "Đề cấu trúc chuẩn Sở Hải Phòng - Đề 01",
+        status: "Đã duyệt"
+      },
+      {
+        id: "HP-P3-006",
+        part: 3,
+        topic: "Thống kê và xác suất",
+        subTopic: "Xác suất của biến cố",
+        difficulty: "Vận dụng cao",
+        points: 0.5,
+        content: "Đề thi gồm 20 câu, mỗi câu 4 đáp án đúng 0,5 điểm. An làm chắc chắn đúng 16 câu (8 điểm), còn 4 câu khoanh bừa. Xác suất để An đạt đúng 9 điểm là bao nhiêu? (Làm tròn 2 chữ số thập phân):",
+        correctAnswer: "0.21",
+        solution: "\\(P = C_4^2 \\cdot (1/4)^2 \\cdot (3/4)^2 \\approx 0.21\\).",
+        source: "Đề cấu trúc chuẩn Sở Hải Phòng - Đề 01",
+        status: "Đã duyệt"
+      }
+    ];
+
+    // Danh mục các chủ đề chuẩn và 4 dạng theo cấu trúc đề thi Sở Hải Phòng
+    const TOPIC_CATALOG = [
+      {
+        id: "topic-can-thuc",
+        name: "Căn bậc hai & Căn thức đại số",
+        category: "Số và Đại số",
+        icon: "fa-square-root-variable",
+        description: "Khái niệm căn bậc hai số học, rút gọn biểu thức chứa căn, trục căn thức ở mẫu.",
+        forms: [
+          { formId: 1, title: "Dạng 1: Nhận biết khái niệm & Điều kiện xác định", type: "Trắc nghiệm 4 lựa chọn (0.25đ)" },
+          { formId: 2, title: "Dạng 2: Thông hiểu & Biến đổi căn thức", type: "Trắc nghiệm 4 lựa chọn (0.25đ)" },
+          { formId: 3, title: "Dạng 3: Đúng / Sai các khẳng định đại số", type: "Trắc nghiệm Đúng / Sai (tối đa 1.0đ)" },
+          { formId: 4, title: "Dạng 4: Trả lời ngắn & Cực trị đại số", type: "Trả lời ngắn (0.5đ)" }
+        ]
+      },
+      {
+        id: "topic-ham-so",
+        name: "Hàm số & Phương trình thực tế",
+        category: "Số và Đại số",
+        icon: "fa-chart-line",
+        description: "Hàm số bậc nhất, parabol y = ax², phương trình quy về bậc nhất/bậc hai, toán chuyển động & thực tế.",
+        forms: [
+          { formId: 1, title: "Dạng 1: Nhận biết đồ thị & Điểm thuộc đồ thị", type: "Trắc nghiệm 4 lựa chọn (0.25đ)" },
+          { formId: 2, title: "Dạng 2: Tương giao đường thẳng & Parabol", type: "Trắc nghiệm 4 lựa chọn (0.25đ)" },
+          { formId: 3, title: "Dạng 3: Đúng / Sai mô hình toán thực tế", type: "Trắc nghiệm Đúng / Sai (tối đa 1.0đ)" },
+          { formId: 4, title: "Dạng 4: Trả lời ngắn toán năng suất & chuyển động", type: "Trả lời ngắn (0.5đ)" }
+        ]
+      },
+      {
+        id: "topic-hinh-hoc",
+        name: "Hệ thức lượng & Đường tròn",
+        category: "Hình học và đo lường",
+        icon: "fa-shapes",
+        description: "Tỉ số lượng giác góc nhọn, hệ thức cạnh và đường cao tam giác vuông, tiếp tuyến và góc với đường tròn.",
+        forms: [
+          { formId: 1, title: "Dạng 1: Nhận biết công thức lượng giác & góc nội tiếp", type: "Trắc nghiệm 4 lựa chọn (0.25đ)" },
+          { formId: 2, title: "Dạng 2: Tính cạnh, góc & đường kính đường tròn", type: "Trắc nghiệm 4 lựa chọn (0.25đ)" },
+          { formId: 3, title: "Dạng 3: Đúng / Sai hình học tổng hợp", type: "Trắc nghiệm Đúng / Sai (tối đa 1.0đ)" },
+          { formId: 4, title: "Dạng 4: Trả lời ngắn tiếp tuyến & khoảng cách", type: "Trả lời ngắn (0.5đ)" }
+        ]
+      },
+      {
+        id: "topic-hinh-khong-gian",
+        name: "Hình trụ - Hình nón - Hình cầu",
+        category: "Hình học và đo lường",
+        icon: "fa-cube",
+        description: "Diện tích xung quanh, diện tích toàn phần và thể tích các hình tròn xoay trong thực tiễn.",
+        forms: [
+          { formId: 1, title: "Dạng 1: Nhận biết công thức diện tích & thể tích", type: "Trắc nghiệm 4 lựa chọn (0.25đ)" },
+          { formId: 2, title: "Dạng 2: Thông hiểu tính thể tích vật thể xoay", type: "Trắc nghiệm 4 lựa chọn (0.25đ)" },
+          { formId: 3, title: "Dạng 3: Đúng / Sai ứng dụng thực tế thể tích", type: "Trắc nghiệm Đúng / Sai (tối đa 1.0đ)" },
+          { formId: 4, title: "Dạng 4: Trả lời ngắn tối ưu hóa vật liệu", type: "Trả lời ngắn (0.5đ)" }
+        ]
+      },
+      {
+        id: "topic-thong-ke",
+        name: "Thống kê & Xác suất biến cố",
+        category: "Thống kê và xác suất",
+        icon: "fa-chart-pie",
+        description: "Bảng tần số, biểu đồ cột tần số tương đối, không gian mẫu và xác suất của biến cố ngẫu nhiên.",
+        forms: [
+          { formId: 1, title: "Dạng 1: Nhận biết số phần tử không gian mẫu & biểu đồ", type: "Trắc nghiệm 4 lựa chọn (0.25đ)" },
+          { formId: 2, title: "Dạng 2: Xác suất biến cố đơn giản", type: "Trắc nghiệm 4 lựa chọn (0.25đ)" },
+          { formId: 3, title: "Dạng 3: Đúng / Sai quy tắc đếm & hoán vị", type: "Trắc nghiệm Đúng / Sai (tối đa 1.0đ)" },
+          { formId: 4, title: "Dạng 4: Trả lời ngắn xác suất thực nghiệm", type: "Trả lời ngắn (0.5đ)" }
+        ]
+      }
+    ];
+
+    const state = {
+      // Hệ thống tài khoản người dùng được quản lý bởi Admin & Thầy Thoan
+      // Ban đầu chỉ có 2 tài khoản chính: admin & thầy Thoan
+      userAccounts: [
+        {
+          id: "usr-admin-01",
+          username: "admin",
+          password: "admin@hp2026",
+          name: "Quản trị viên Hệ thống",
+          email: "admin@toan9hp.edu.vn",
+          role: "admin",
+          classId: null,
+          className: "Toàn trường",
+          createdAt: "18/10/2026"
+        },
+        {
+          id: "usr-teacher-01",
+          username: "thaythoan",
+          password: "thoan@hp2026",
+          name: "Thầy Nguyễn Văn Thoan",
+          email: "thoan.nv@haiphong.edu.vn",
+          role: "teacher",
+          classId: null,
+          className: "Giáo viên Toán THCS",
+          createdAt: "18/10/2026"
+        }
+      ],
+      currentUser: null, // Chưa đăng nhập ban đầu
+      activeTab: "dashboard", // 'dashboard', 'topic_practice', 'exam_room', 'class_management', 'question_bank', 'analytics'
+      
+      // Ôn tập theo chuyên đề
+      selectedTopicId: "topic-can-thuc",
+      selectedFormFilter: 0, // 0: Tất cả, 1, 2, 3, 4
+      topicPracticeAnswers: {},
+      topicResult: null,
+
+      // Danh sách xếp hạng học sinh ôn tập theo chuyên đề
+      topicLeaderboards: [
+        { id: "TL-01", studentId: "student-02", studentName: "Trần Thị Mai Anh", className: "Lớp 9A1", topicId: "topic-can-thuc", topicName: "Căn bậc hai & Căn thức đại số", totalPoints: 2.0, maxPoints: 2.0, completedCount: 4, totalCount: 4, completedAt: "18/10/2026 14:15" },
+        { id: "TL-02", studentId: "student-01", studentName: "Nguyễn Minh Đức", className: "Lớp 9A1", topicId: "topic-can-thuc", topicName: "Căn bậc hai & Căn thức đại số", totalPoints: 1.75, maxPoints: 2.0, completedCount: 4, totalCount: 4, completedAt: "18/10/2026 14:30" },
+        { id: "TL-03", studentId: "student-03", studentName: "Phạm Hải Đăng", className: "Lớp 9A2", topicId: "topic-ham-so", topicName: "Hàm số & Phương trình thực tế", totalPoints: 1.5, maxPoints: 2.0, completedCount: 4, totalCount: 4, completedAt: "18/10/2026 13:50" }
+      ],
+
+      classList: [
+        { id: "class-9a1", name: "Lớp 9A1 - Chuyên Toán THCS Chu Văn An", teacherId: "usr-teacher-01", joinCode: "HP9A1" },
+        { id: "class-9a2", name: "Lớp 9A2 - Ôn thi vào 10 THCS Lê Lợi", teacherId: "usr-teacher-01", joinCode: "HP9A2" }
+      ],
+      studentList: [], // Sẽ đồng bộ từ danh sách userAccounts role='student'
+      examAttempts: [
+        {
+          id: "ATT-001",
+          studentId: "student-01",
+          studentName: "Nguyễn Minh Đức",
+          className: "Lớp 9A1",
+          examTitle: "Đề thi thử vào 10 THPT Hải Phòng - Đề 01",
+          part1Score: 2.75,
+          part2Score: 3.25,
+          part3Score: 2.0,
+          totalScore: 8.0,
+          durationMin: 82,
+          submittedAt: "18/10/2026 09:22"
+        },
+        {
+          id: "ATT-002",
+          studentId: "student-02",
+          studentName: "Trần Thị Mai Anh",
+          className: "Lớp 9A1",
+          examTitle: "Đề thi thử vào 10 THPT Hải Phòng - Đề 01",
+          part1Score: 3.0,
+          part2Score: 3.75,
+          part3Score: 2.5,
+          totalScore: 9.25,
+          durationMin: 90,
+          submittedAt: "18/10/2026 09:30"
+        }
+      ],
+      // Phiên thi hiện tại
+      currentExam: null,
+      userAnswers: {},
+      bookmarked: {},
+      examTimerSec: 5400, // 90 phút
+      examTimerInterval: null,
+      examResult: null,
+      allowInstantReview: true
+    };
+
+    function renderMathInElement(container) {
+      if (!container) return;
+      if (window.katex) {
+        try {
+          const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
+          const nodesToReplace = [];
+          while (walker.nextNode()) {
+            const node = walker.currentNode;
+            if (node.nodeValue && node.nodeValue.includes('\\(')) {
+              nodesToReplace.push(node);
+            }
+          }
+
+          nodesToReplace.forEach(node => {
+            const parent = node.parentNode;
+            if (!parent || parent.nodeName === 'SCRIPT' || parent.nodeName === 'STYLE') return;
+            const parts = node.nodeValue.split(/(\\\([\s\S]*?\\\)|\$\$[\s\S]*?\$\$)/g);
+            const fragment = document.createDocumentFragment();
+
+            parts.forEach(part => {
+              if (part.startsWith('\\(') && part.endsWith('\\)')) {
+                const math = part.slice(2, -2);
+                const span = document.createElement('span');
+                try {
+                  window.katex.render(math, span, { throwOnError: false });
+                } catch(e) {
+                  span.textContent = math;
+                }
+                fragment.appendChild(span);
+              } else if (part.startsWith('$$') && part.endsWith('$$')) {
+                const math = part.slice(2, -2);
+                const div = document.createElement('div');
+                try {
+                  window.katex.render(math, div, { displayMode: true, throwOnError: false });
+                } catch(e) {
+                  div.textContent = math;
+                }
+                fragment.appendChild(div);
+              } else {
+                fragment.appendChild(document.createTextNode(part));
+              }
+            });
+            parent.replaceChild(fragment, node);
+          });
+        } catch (e) {
+          console.warn("KaTeX rendering warning:", e);
+        }
+      }
+    }
+
+    // Modal điều khiển
+    function showModal(title, message, isWarning = false) {
+      const modal = document.getElementById("app-modal");
+      const header = document.getElementById("modal-header");
+      const titleEl = document.getElementById("modal-title");
+      const msgEl = document.getElementById("modal-message");
+
+      if (isWarning) {
+        header.className = "p-4 text-white flex items-center justify-between bg-amber-600";
+      } else {
+        header.className = "p-4 text-white flex items-center justify-between bg-sky-600";
+      }
+      titleEl.textContent = title;
+      msgEl.textContent = message;
+      modal.classList.remove("hidden");
+    }
+
+    function closeModal() {
+      document.getElementById("app-modal").classList.add("hidden");
+    }
+
+    // Quản lý Modal Đăng nhập
+    function openLoginModal(errorText = "") {
+      const modal = document.getElementById("login-modal");
+      const errBox = document.getElementById("login-error-msg");
+      const errTxt = document.getElementById("login-error-text");
+      if (errorText) {
+        errTxt.textContent = errorText;
+        errBox.classList.remove("hidden");
+      } else {
+        errBox.classList.add("hidden");
+      }
+      modal.classList.remove("hidden");
+    }
+
+    function closeLoginModal() {
+      document.getElementById("login-modal").classList.add("hidden");
+    }
+
+    function handleLoginSubmit() {
+      const uInput = document.getElementById("login-username").value.trim().toLowerCase();
+      const pInput = document.getElementById("login-password").value.trim();
+
+      if (!uInput || !pInput) {
+        openLoginModal("Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu!");
+        return;
+      }
+
+      const foundUser = state.userAccounts.find(u => 
+        (u.username.toLowerCase() === uInput || u.email.toLowerCase() === uInput) && 
+        u.password === pInput
+      );
+
+      if (!foundUser) {
+        openLoginModal("Tên đăng nhập hoặc mật khẩu không đúng! Vui lòng liên hệ Thầy Thoan hoặc Quản trị viên.");
+        return;
+      }
+
+      state.currentUser = foundUser;
+      closeLoginModal();
+      showModal("Đăng nhập thành công", `Xin chào ${foundUser.name}!\nVai trò: ${foundUser.role === 'admin' ? 'Quản trị viên' : foundUser.role === 'teacher' ? 'Thầy Nguyễn Văn Thoan (Giáo viên)' : 'Học sinh: ' + foundUser.className}`);
+      
+      state.activeTab = "dashboard";
+      renderNavigation();
+      renderContent();
+    }
+
+    function handleLogout() {
+      state.currentUser = null;
+      document.getElementById("login-username").value = "";
+      document.getElementById("login-password").value = "";
+      renderNavigation();
+      openLoginModal();
+    }
+
+    function setTab(tabName) {
+      if (!state.currentUser) {
+        openLoginModal("Vui lòng đăng nhập để tiếp tục!");
+        return;
+      }
+      state.activeTab = tabName;
+      renderNavigation();
+      renderContent();
+    }
+
+    function renderNavigation() {
+      if (!state.currentUser) {
+        document.getElementById("main-nav").innerHTML = "";
+        document.getElementById("mobile-nav").innerHTML = "";
+        document.getElementById("user-display-name").textContent = "Chưa đăng nhập";
+        document.getElementById("user-display-role").textContent = "Vui lòng đăng nhập";
+        return;
+      }
+
+      const isStudent = state.currentUser.role === "student";
+      const navLinks = [
+        { id: "dashboard", label: "Trang chủ", icon: "fa-house" },
+        { id: "topic_practice", label: "Ôn tập chuyên đề", icon: "fa-layer-group" },
+        { id: "exam_room", label: "Phòng thi 90p", icon: "fa-pen-to-square" }
+      ];
+
+      // Chỉ Admin và Giáo viên (Thầy Thoan) mới thấy Quản lý lớp & Ngân hàng đề
+      if (!isStudent) {
+        navLinks.push({ id: "class_management", label: "Quản lý Lớp & Tài khoản HS", icon: "fa-users-gear" });
+        navLinks.push({ id: "question_bank", label: "Ngân hàng đề", icon: "fa-database" });
+      }
+
+      navLinks.push({ id: "analytics", label: isStudent ? "Tiến độ của em" : "Báo cáo điểm", icon: "fa-chart-pie" });
+
+      const mainNav = document.getElementById("main-nav");
+      const mobileNav = document.getElementById("mobile-nav");
+
+      const navHtml = navLinks.map(link => `
+        <button onclick="setTab('${link.id}')" class="px-3 py-2 rounded-lg transition flex items-center gap-1.5 ${state.activeTab === link.id ? 'bg-sky-50 text-sky-700 shadow-xs' : 'text-slate-600 hover:bg-slate-50'}">
+          <i class="fa-solid ${link.icon}"></i>
+          <span>${link.label}</span>
+        </button>
+      `).join("");
+
+      mainNav.innerHTML = navHtml;
+      mobileNav.innerHTML = navHtml;
+
+      document.getElementById("user-display-name").textContent = state.currentUser.name;
+      document.getElementById("user-display-role").textContent = 
+        state.currentUser.role === "admin" ? "Quản trị viên" :
+        state.currentUser.role === "teacher" ? "Thầy Nguyễn Văn Thoan" : `${state.currentUser.className || 'Học sinh lớp 9'}`;
+    }
+
+    function renderContent() {
+      const main = document.getElementById("main-content");
+      if (!state.currentUser) {
+        main.innerHTML = `
+          <div class="bg-white rounded-3xl p-8 max-w-lg mx-auto my-12 text-center border border-slate-200 shadow-sm space-y-4">
+            <div class="w-16 h-16 bg-sky-100 text-sky-700 rounded-2xl flex items-center justify-center mx-auto text-2xl font-black">
+              HP
+            </div>
+            <h2 class="text-xl font-black text-slate-800">Cổng Luyện thi Tuyển sinh vào Lớp 10 Hải Phòng</h2>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Hệ thống yêu cầu tài khoản và mật khẩu do Ban Quản trị hoặc Thầy Nguyễn Văn Thoan cấp riêng cho từng học sinh.
+            </p>
+            <button onclick="openLoginModal()" class="w-full py-3 bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs rounded-xl shadow-md transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-lock-open"></i> Đăng nhập tài khoản
+            </button>
+          </div>
+        `;
+        return;
+      }
+
+      if (state.activeTab === "dashboard") {
+        renderDashboard(main);
+      } else if (state.activeTab === "topic_practice") {
+        renderTopicPractice(main);
+      } else if (state.activeTab === "exam_room") {
+        renderExamRoom(main);
+      } else if (state.activeTab === "class_management") {
+        renderClassManagement(main);
+      } else if (state.activeTab === "question_bank") {
+        renderQuestionBank(main);
+      } else if (state.activeTab === "analytics") {
+        renderAnalytics(main);
+      }
+
+      renderMathInElement(main);
+    }
+
+    // Tab 1: Dashboard
+    function renderDashboard(container) {
+      container.innerHTML = `
+        <div class="space-y-6 max-w-5xl mx-auto pb-12">
+          <div class="bg-gradient-to-r from-sky-600 to-blue-700 rounded-3xl p-6 sm:p-8 text-white shadow-lg relative overflow-hidden">
+            <div class="relative z-10 max-w-2xl">
+              <span class="bg-white/20 text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider backdrop-blur-xs">
+                Cấu trúc tuyển sinh vào 10 năm học 2025 - 2026
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-black mt-3 leading-tight">
+                Hệ thống Luyện thi Toán 9 Hải Phòng
+              </h2>
+              <p class="text-sky-100 text-xs sm:text-sm mt-2 leading-relaxed">
+                Phụ trách chuyên môn: <strong>Thầy Nguyễn Văn Thoan</strong>. Biên soạn chuẩn theo Quyết định số 7008/QĐ-SGDĐT của Sở GD&ĐT Hải Phòng: 100% trắc nghiệm 3 dạng thức (Nhiều lựa chọn, Đúng/Sai lũy tiến, Trả lời ngắn).
+              </p>
+              <div class="mt-6 flex flex-wrap gap-3">
+                <button onclick="setTab('topic_practice')" class="px-5 py-2.5 bg-amber-400 hover:bg-amber-300 text-slate-900 font-extrabold text-xs rounded-xl shadow-md transition flex items-center gap-2">
+                  <i class="fa-solid fa-layer-group"></i> Ôn tập theo chuyên đề (4 dạng)
+                </button>
+                <button onclick="startAutoExam()" class="px-5 py-2.5 bg-white text-sky-700 hover:bg-sky-50 font-bold text-xs rounded-xl shadow-md transition flex items-center gap-2">
+                  <i class="fa-solid fa-play"></i> Bắt đầu thi thử (90 phút)
+                </button>
+                ${state.currentUser.role !== "student" ? `
+                  <button onclick="setTab('class_management')" class="px-5 py-2.5 bg-sky-800/80 hover:bg-sky-800 text-white font-bold text-xs rounded-xl transition flex items-center gap-2">
+                    <i class="fa-solid fa-users"></i> Quản lý lớp & học sinh
+                  </button>
+                ` : ''}
+              </div>
+            </div>
+          </div>
+
+          <!-- Lưới thông tin chuyên đề & Dạng thức -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs space-y-2">
+              <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-black">
+                I
+              </div>
+              <h3 class="font-bold text-slate-800 text-sm">Phần I: 4 Lựa chọn</h3>
+              <p class="text-xs text-slate-500 leading-relaxed">
+                12 câu hỏi trắc nghiệm truyền thống (Nhận biết & Thông hiểu). Mỗi câu đúng được <strong>0,25 điểm</strong>. Tổng 3,0 điểm.
+              </p>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs space-y-2">
+              <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-black">
+                II
+              </div>
+              <h3 class="font-bold text-slate-800 text-sm">Phần II: Đúng / Sai</h3>
+              <p class="text-xs text-slate-500 leading-relaxed">
+                4 câu hỏi lớn (16 ý a, b, c, d). Chấm lũy tiến Sở HP: Đúng 1 ý = 0.1đ, 2 ý = 0.25đ, 3 ý = 0.5đ, 4 ý = <strong>1,0 điểm</strong>.
+              </p>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs space-y-2">
+              <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-black">
+                III
+              </div>
+              <h3 class="font-bold text-slate-800 text-sm">Phần III: Trả lời ngắn</h3>
+              <p class="text-xs text-slate-500 leading-relaxed">
+                6 câu hỏi Vận dụng & Vận dụng cao. Thí sinh tự điền đáp số tối đa 4 ký tự. Mỗi câu đúng được <strong>0,5 điểm</strong>. Tổng 3,0 điểm.
+              </p>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // Module: ÔN TẬP THEO CHUYÊN ĐỀ (4 dạng theo cấu trúc đề thi Sở Hải Phòng)
+    function renderTopicPractice(container) {
+      const currentTopic = TOPIC_CATALOG.find(t => t.id === state.selectedTopicId) || TOPIC_CATALOG[0];
+
+      // Lọc câu hỏi thuộc chuyên đề này và gán về 4 dạng chuẩn
+      const topicQuestions = getTopicQuestions(currentTopic.id);
+      const filteredQuestions = state.selectedFormFilter === 0 
+        ? topicQuestions 
+        : topicQuestions.filter(q => q.assignedForm === state.selectedFormFilter);
+
+      // Bảng xếp hạng học sinh ôn tập chuyên đề này (sắp xếp giảm dần theo điểm)
+      const topicRanks = state.topicLeaderboards
+        .filter(l => l.topicId === currentTopic.id)
+        .sort((a, b) => b.totalPoints - a.totalPoints);
+
+      container.innerHTML = `
+        <div class="space-y-6 max-w-6xl mx-auto pb-12">
+          <!-- Thanh điều khiển chọn chuyên đề -->
+          <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 sm:p-6">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-5">
+              <div>
+                <span class="text-[11px] font-bold text-sky-700 bg-sky-50 px-2.5 py-1 rounded-full uppercase tracking-wider">
+                  Chương trình ôn tập Toán 9 Sở Hải Phòng
+                </span>
+                <h2 class="text-xl sm:text-2xl font-black text-slate-800 mt-2 flex items-center gap-2">
+                  <i class="fa-solid ${currentTopic.icon} text-sky-600"></i> ${currentTopic.name}
+                </h2>
+                <p class="text-slate-500 text-xs mt-1 leading-relaxed">${currentTopic.description}</p>
+              </div>
+
+              <!-- Menu chọn nhanh chuyên đề -->
+              <div class="shrink-0 flex items-center gap-2">
+                <label class="text-xs font-bold text-slate-500">Đổi chuyên đề:</label>
+                <select onchange="changeTopic(this.value)" class="text-xs font-semibold px-3 py-2 rounded-xl border border-slate-300 bg-white text-slate-800 focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-xs">
+                  ${TOPIC_CATALOG.map(top => `
+                    <option value="${top.id}" ${top.id === currentTopic.id ? 'selected' : ''}>${top.name}</option>
+                  `).join("")}
+                </select>
+              </div>
+            </div>
+
+            <!-- Tab 4 dạng câu hỏi chuẩn cấu trúc Sở GD&ĐT Hải Phòng -->
+            <div class="mt-4 flex flex-wrap gap-2 text-xs font-semibold">
+              <button onclick="filterForm(0)" class="px-3.5 py-2 rounded-xl border transition ${state.selectedFormFilter === 0 ? 'bg-sky-600 text-white border-sky-600 shadow-xs' : 'bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100'}">
+                Tất cả 4 dạng (${topicQuestions.length} câu)
+              </button>
+              ${currentTopic.forms.map(form => {
+                const count = topicQuestions.filter(q => q.assignedForm === form.formId).length;
+                const isSelected = state.selectedFormFilter === form.formId;
+                return `
+                  <button onclick="filterForm(${form.formId})" class="px-3.5 py-2 rounded-xl border transition flex items-center gap-1.5 ${isSelected ? 'bg-sky-600 text-white border-sky-600 shadow-xs' : 'bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100'}">
+                    <span>${form.title.split(":")[0]}</span>
+                    <span class="px-1.5 py-0.2 rounded-full text-[10px] ${isSelected ? 'bg-sky-800 text-sky-100' : 'bg-slate-200 text-slate-600'}">${count}</span>
+                  </button>
+                `;
+              }).join("")}
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Cột trái (2/3): Danh sách câu hỏi ôn tập theo 4 dạng -->
+            <div class="lg:col-span-2 space-y-4">
+              ${filteredQuestions.length === 0 ? `
+                <div class="p-8 text-center bg-white rounded-2xl border border-slate-200 text-slate-500 text-xs">
+                  Chưa có câu hỏi nào thuộc dạng này trong ngân hàng đề.
+                </div>
+              ` : ''}
+
+              ${filteredQuestions.map((q, idx) => {
+                const formInfo = currentTopic.forms.find(f => f.formId === q.assignedForm) || currentTopic.forms[0];
+                return `
+                  <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs space-y-3">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-2.5">
+                      <div class="flex items-center gap-2">
+                        <span class="bg-sky-100 text-sky-800 font-extrabold text-xs px-2.5 py-1 rounded-lg">Câu ${idx + 1}</span>
+                        <span class="text-xs font-bold text-slate-700">${formInfo.title}</span>
+                      </div>
+                      <span class="text-[11px] font-semibold text-sky-600 bg-sky-50 px-2 py-0.5 rounded-md">
+                        +${q.points} điểm
+                      </span>
+                    </div>
+
+                    <div class="text-slate-800 text-sm font-medium">
+                      ${q.content}
+                    </div>
+
+                    ${q.part === 1 ? `
+                      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+                        ${q.options.map((opt, oidx) => {
+                          const label = ["A", "B", "C", "D"][oidx];
+                          const isSelected = state.topicPracticeAnswers[q.id] === label;
+                          return `
+                            <button onclick="selectTopicOption('${q.id}', '${label}')" class="p-3 text-left text-xs sm:text-sm rounded-xl border flex items-start gap-2.5 transition ${isSelected ? 'border-sky-600 bg-sky-50 font-bold text-sky-950 ring-1 ring-sky-500' : 'border-slate-200 hover:bg-slate-50 text-slate-700'}">
+                              <span class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${isSelected ? 'bg-sky-600 text-white' : 'bg-slate-100 text-slate-600'}">${label}</span>
+                              <span class="pt-0.5">${opt}</span>
+                            </button>
+                          `;
+                        }).join("")}
+                      </div>
+                    ` : ''}
+
+                    ${q.part === 2 ? `
+                      <div class="space-y-2 pt-1">
+                        ${q.subQuestions.map(sq => {
+                          const ans = state.topicPracticeAnswers[q.id] && state.topicPracticeAnswers[q.id][sq.label];
+                          return `
+                            <div class="p-3 rounded-xl border border-slate-200 bg-slate-50/50 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs sm:text-sm">
+                              <div class="flex items-start gap-2">
+                                <span class="font-bold text-sky-700">${sq.label})</span>
+                                <div>${sq.text}</div>
+                              </div>
+                              <div class="flex items-center gap-2 shrink-0">
+                                <button onclick="selectTopicTrueFalse('${q.id}', '${sq.label}', true)" class="px-3 py-1.5 text-xs font-bold rounded-lg border transition ${ans === true ? 'bg-emerald-600 text-white border-emerald-600' : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-100'}">Đúng</button>
+                                <button onclick="selectTopicTrueFalse('${q.id}', '${sq.label}', false)" class="px-3 py-1.5 text-xs font-bold rounded-lg border transition ${ans === false ? 'bg-rose-600 text-white border-rose-600' : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-100'}">Sai</button>
+                              </div>
+                            </div>
+                          `;
+                        }).join("")}
+                      </div>
+                    ` : ''}
+
+                    ${q.part === 3 ? `
+                      <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 pt-1">
+                        <label class="block text-xs font-medium text-slate-600 mb-1">
+                          Nhập kết quả ngắn (tối đa 4 ký tự):
+                        </label>
+                        <input type="text" maxlength="8" oninput="saveTopicShortAnswer('${q.id}', this.value)" value="${state.topicPracticeAnswers[q.id] || ''}" placeholder="Ví dụ: 450, 5, 20..." class="w-48 px-3 py-2 text-xs font-bold rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500 bg-white" />
+                      </div>
+                    ` : ''}
+
+                    ${state.topicResult && state.topicResult[q.id] ? `
+                      <div class="p-3 rounded-xl border text-xs ${state.topicResult[q.id].earned > 0 ? 'bg-emerald-50 border-emerald-200 text-emerald-900' : 'bg-rose-50 border-rose-200 text-rose-900'}">
+                        <div class="font-bold mb-1">
+                          ${state.topicResult[q.id].earned > 0 ? '✓ Đạt điểm' : '✗ Chưa chính xác'}: +${state.topicResult[q.id].earned} / ${q.points} điểm
+                        </div>
+                        <div><strong>Lời giải:</strong> ${q.solution || 'Đang cập nhật'}</div>
+                      </div>
+                    ` : ''}
+                  </div>
+                `;
+              }).join("")}
+
+              <!-- Nút nộp bài ôn tập -->
+              <div class="pt-2 flex justify-end">
+                <button onclick="submitTopicPractice()" class="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs sm:text-sm rounded-xl shadow-md transition flex items-center gap-2">
+                  <i class="fa-solid fa-calculator"></i> Nộp bài ôn tập & Tính điểm tích lũy
+                </button>
+              </div>
+            </div>
+
+            <!-- Cột phải (1/3): Bảng danh sách học sinh đã ôn tập (Xếp theo thứ tự điểm) -->
+            <div class="lg:col-span-1 space-y-4">
+              <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs sticky top-20">
+                <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                  <div>
+                    <h3 class="font-extrabold text-sm text-slate-800 flex items-center gap-1.5">
+                      <i class="fa-solid fa-trophy text-amber-500"></i> Bảng vàng ôn tập
+                    </h3>
+                    <p class="text-[11px] text-slate-400">Xếp hạng học sinh theo thứ tự điểm</p>
+                  </div>
+                  <span class="text-xs font-bold bg-sky-50 text-sky-700 px-2 py-0.5 rounded-full">
+                    ${topicRanks.length} lượt
+                  </span>
+                </div>
+
+                <div class="divide-y divide-slate-100 mt-2 max-h-[460px] overflow-y-auto">
+                  ${topicRanks.length === 0 ? `
+                    <div class="py-6 text-center text-slate-400 text-xs">
+                      Chưa có bạn nào nộp bài chuyên đề này. Hãy là người đầu tiên!
+                    </div>
+                  ` : ''}
+
+                  ${topicRanks.map((item, idx) => `
+                    <div class="py-3 flex items-center justify-between gap-2 text-xs">
+                      <div class="flex items-center gap-2.5">
+                        <span class="w-6 h-6 rounded-full flex items-center justify-center font-black text-[11px] ${idx === 0 ? 'bg-amber-400 text-white shadow-xs' : idx === 1 ? 'bg-slate-300 text-slate-800' : idx === 2 ? 'bg-amber-700 text-white' : 'bg-slate-100 text-slate-600'}">
+                          ${idx + 1}
+                        </span>
+                        <div>
+                          <div class="font-bold text-slate-800">${item.studentName}</div>
+                          <div class="text-[10px] text-slate-400">${item.className} • ${item.completedAt}</div>
+                        </div>
+                      </div>
+                      <div class="text-right shrink-0">
+                        <div class="font-extrabold text-sm text-sky-700">${item.totalPoints}đ</div>
+                        <div class="text-[10px] text-slate-400">Đạt ${Math.round((item.totalPoints / item.maxPoints) * 100)}%</div>
+                      </div>
+                    </div>
+                  `).join("")}
+                </div>
+
+                <div class="pt-4 border-t border-slate-100 text-[11px] text-slate-500 space-y-2">
+                  <div class="flex justify-between font-semibold">
+                    <span>Thí sinh hiện tại:</span>
+                    <span class="text-slate-800 font-bold">${state.currentUser.name}</span>
+                  </div>
+                  <p class="text-[10px] text-slate-400 leading-tight">
+                    * Điểm số được tính tự động từ 4 dạng câu hỏi và cập nhật ngay vào bảng xếp hạng sau khi nộp bài.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // Hàm ánh xạ câu hỏi vào 4 dạng đề thi chuẩn Sở GD&ĐT Hải Phòng
+    function getTopicQuestions(topicId) {
+      if (topicId === "topic-can-thuc") {
+        return [
+          { ...QUESTION_BANK[0], assignedForm: 1 }, // Nhận biết
+          { ...QUESTION_BANK[1], assignedForm: 2 }, // Thông hiểu
+          { ...QUESTION_BANK[12], assignedForm: 3 }, // Đúng/Sai
+          { ...QUESTION_BANK[18], assignedForm: 4 }  // Vận dụng/Trả lời ngắn
+        ];
+      } else if (topicId === "topic-ham-so") {
+        return [
+          { ...QUESTION_BANK[2], assignedForm: 1 },
+          { ...QUESTION_BANK[8], assignedForm: 2 },
+          { ...QUESTION_BANK[13], assignedForm: 3 },
+          { ...QUESTION_BANK[16], assignedForm: 4 }
+        ];
+      } else if (topicId === "topic-hinh-hoc") {
+        return [
+          { ...QUESTION_BANK[6], assignedForm: 1 },
+          { ...QUESTION_BANK[5], assignedForm: 2 },
+          { ...QUESTION_BANK[14], assignedForm: 3 },
+          { ...QUESTION_BANK[20], assignedForm: 4 }
+        ];
+      } else if (topicId === "topic-hinh-khong-gian") {
+        return [
+          { ...QUESTION_BANK[4], assignedForm: 1 },
+          { ...QUESTION_BANK[7], assignedForm: 2 },
+          { ...QUESTION_BANK[13], assignedForm: 3 },
+          { ...QUESTION_BANK[17], assignedForm: 4 }
+        ];
+      } else { // Thống kê & xác suất
+        return [
+          { ...QUESTION_BANK[9], assignedForm: 1 },
+          { ...QUESTION_BANK[10], assignedForm: 2 },
+          { ...QUESTION_BANK[15], assignedForm: 3 },
+          { ...QUESTION_BANK[21], assignedForm: 4 }
+        ];
+      }
+    }
+
+    function changeTopic(topicId) {
+      state.selectedTopicId = topicId;
+      state.selectedFormFilter = 0;
+      state.topicPracticeAnswers = {};
+      state.topicResult = null;
+      renderContent();
+    }
+
+    function filterForm(formId) {
+      state.selectedFormFilter = formId;
+      renderContent();
+    }
+
+    function selectTopicOption(qId, label) {
+      state.topicPracticeAnswers[qId] = label;
+      renderContent();
+    }
+
+    function selectTopicTrueFalse(qId, subLabel, val) {
+      if (!state.topicPracticeAnswers[qId]) state.topicPracticeAnswers[qId] = {};
+      state.topicPracticeAnswers[qId][subLabel] = val;
+      renderContent();
+    }
+
+    function saveTopicShortAnswer(qId, val) {
+      state.topicPracticeAnswers[qId] = val;
+    }
+
+    // Chấm điểm bài ôn tập chuyên đề & đưa vào Bảng xếp hạng điểm số
+    function submitTopicPractice() {
+      const currentTopic = TOPIC_CATALOG.find(t => t.id === state.selectedTopicId);
+      const questions = getTopicQuestions(currentTopic.id);
+
+      let totalEarned = 0;
+      let maxPoints = 0;
+      const res = {};
+
+      questions.forEach(q => {
+        maxPoints += q.points;
+        if (q.part === 1) {
+          const uAns = state.topicPracticeAnswers[q.id];
+          const isCorrect = uAns === q.correctAnswer;
+          const earned = isCorrect ? q.points : 0;
+          totalEarned += earned;
+          res[q.id] = { isCorrect, earned };
+        } else if (q.part === 2) {
+          const uSub = state.topicPracticeAnswers[q.id] || {};
+          let count = 0;
+          q.subQuestions.forEach(sq => {
+            if (uSub[sq.label] === sq.correct) count++;
+          });
+          let earned = 0;
+          if (count === 1) earned = 0.1;
+          else if (count === 2) earned = 0.25;
+          else if (count === 3) earned = 0.5;
+          else if (count === 4) earned = 1.0;
+          totalEarned += earned;
+          res[q.id] = { count, earned };
+        } else if (q.part === 3) {
+          const uShort = (state.topicPracticeAnswers[q.id] || "").trim().replace(",", ".");
+          const correctShort = String(q.correctAnswer).trim().replace(",", ".");
+          const isCorrect = uShort.toLowerCase() === correctShort.toLowerCase() || 
+            (!isNaN(parseFloat(uShort)) && Math.abs(parseFloat(uShort) - parseFloat(correctShort)) < 0.01);
+          const earned = isCorrect ? q.points : 0;
+          totalEarned += earned;
+          res[q.id] = { isCorrect, earned };
+        }
+      });
+
+      totalEarned = Math.round(totalEarned * 100) / 100;
+      state.topicResult = res;
+
+      // Cập nhật hoặc ghi mới vào Bảng xếp hạng ôn tập
+      const nowStr = new Date().toLocaleTimeString().slice(0, 5) + " " + new Date().toLocaleDateString();
+      const existingRank = state.topicLeaderboards.find(l => l.studentId === state.currentUser.id && l.topicId === currentTopic.id);
+
+      if (existingRank) {
+        existingRank.totalPoints = Math.max(existingRank.totalPoints, totalEarned);
+        existingRank.completedAt = nowStr;
+      } else {
+        state.topicLeaderboards.push({
+          id: "TL-" + Date.now(),
+          studentId: state.currentUser.id,
+          studentName: state.currentUser.name,
+          className: state.currentUser.role === "student" ? "Lớp 9A1" : "Giáo viên",
+          topicId: currentTopic.id,
+          topicName: currentTopic.name,
+          totalPoints: totalEarned,
+          maxPoints: maxPoints,
+          completedCount: Object.keys(state.topicPracticeAnswers).length,
+          totalCount: questions.length,
+          completedAt: nowStr
+        });
+      }
+
+      showModal("Hoàn thành ôn tập!", `Em đã đạt ${totalEarned} / ${maxPoints} điểm trong chuyên đề "${currentTopic.name}". Điểm số đã được cập nhật vào Bảng vàng vinh danh!`);
+      renderContent();
+    }
+
+    function startAutoExam() {
+      const p1 = QUESTION_BANK.filter(q => q.part === 1).slice(0, 12);
+      const p2 = QUESTION_BANK.filter(q => q.part === 2).slice(0, 4);
+      const p3 = QUESTION_BANK.filter(q => q.part === 3).slice(0, 6);
+
+      state.currentExam = {
+        title: "ĐỀ THI THỬ VÀO 10 THPT – TOÁN HẢI PHÒNG (CHUẨN MA TRẬN)",
+        code: "HP-TS10-" + Math.floor(1000 + Math.random() * 9000),
+        questions: [...p1, ...p2, ...p3]
+      };
+      state.userAnswers = {};
+      state.bookmarked = {};
+      state.examResult = null;
+      state.examTimerSec = 5400; // 90 phút
+
+      if (state.examTimerInterval) clearInterval(state.examTimerInterval);
+      state.examTimerInterval = setInterval(() => {
+        state.examTimerSec--;
+        const timerDisplay = document.getElementById("exam-timer-text");
+        if (timerDisplay) {
+          const m = Math.floor(state.examTimerSec / 60);
+          const s = state.examTimerSec % 60;
+          timerDisplay.textContent = `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+        }
+        if (state.examTimerSec <= 0) {
+          clearInterval(state.examTimerInterval);
+          submitExam(true);
+        }
+      }, 1000);
+
+      setTab("exam_room");
+    }
+
+    function renderExamRoom(container) {
+      if (!state.currentExam) {
+        container.innerHTML = `
+          <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 text-center max-w-lg mx-auto my-12">
+            <div class="w-16 h-16 bg-sky-100 text-sky-600 rounded-full flex items-center justify-center mx-auto text-2xl mb-4">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <h2 class="text-xl font-bold text-slate-800 mb-2">Chưa có bài thi nào đang làm</h2>
+            <p class="text-slate-500 text-xs mb-6">Em có thể bắt đầu thi thử một đề chuẩn cấu trúc Sở GD&ĐT Hải Phòng với thời gian 90 phút.</p>
+            <button onclick="startAutoExam()" class="w-full py-3 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-xl shadow-md transition flex items-center justify-center gap-2 text-xs">
+              <i class="fa-solid fa-play"></i> Bắt đầu thi thử (90 phút)
+            </button>
+          </div>
+        `;
+        return;
+      }
+
+      if (state.examResult) {
+        renderExamResult(container);
+        return;
+      }
+
+      const m = Math.floor(state.examTimerSec / 60);
+      const s = state.examTimerSec % 60;
+      const timeStr = `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+
+      container.innerHTML = `
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 max-w-7xl mx-auto pb-12">
+          <div class="lg:col-span-3 space-y-4">
+            <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 flex items-center justify-between shadow-xs">
+              <div>
+                <h2 class="text-base sm:text-lg font-bold text-slate-800">${state.currentExam.title}</h2>
+                <p class="text-xs text-slate-500 mt-0.5">Mã đề: <strong>${state.currentExam.code}</strong> | 34 lệnh hỏi chuẩn Sở GD&ĐT Hải Phòng</p>
+              </div>
+              <div class="lg:hidden text-center bg-sky-50 text-sky-700 px-3 py-1.5 rounded-lg font-bold text-xs">
+                <i class="fa-regular fa-clock mr-1"></i> <span id="exam-timer-text-mobile">${timeStr}</span>
+              </div>
+            </div>
+
+            <!-- Danh sách câu hỏi -->
+            <div class="space-y-4">
+              ${state.currentExam.questions.map((q, idx) => `
+                <div id="q-box-${q.id}" class="bg-white rounded-2xl border p-4 sm:p-6 transition ${state.bookmarked[q.id] ? 'border-amber-400 bg-amber-50/20' : 'border-slate-200'}">
+                  <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3">
+                    <div class="flex items-center gap-2">
+                      <span class="bg-sky-600 text-white font-black text-xs px-2.5 py-1 rounded-md">Câu ${idx + 1}</span>
+                      <span class="text-xs text-slate-500 font-medium">
+                        ${q.part === 1 ? 'Phần I (Trắc nghiệm 4 lựa chọn - 0.25đ)' : q.part === 2 ? 'Phần II (Đúng / Sai - tối đa 1.0đ)' : 'Phần III (Trả lời ngắn - 0.5đ)'}
+                      </span>
+                    </div>
+                    <button onclick="toggleBookmark('${q.id}')" class="text-xs font-semibold px-2.5 py-1 rounded-md transition ${state.bookmarked[q.id] ? 'bg-amber-500 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">
+                      <i class="fa-solid fa-bookmark mr-1"></i> ${state.bookmarked[q.id] ? 'Đã đánh dấu' : 'Đánh dấu'}
+                    </button>
+                  </div>
+
+                  <div class="text-slate-800 text-sm font-medium mb-3">
+                    ${q.content}
+                  </div>
+
+                  ${q.part === 1 ? `
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                      ${q.options.map((opt, oidx) => {
+                        const label = ["A", "B", "C", "D"][oidx];
+                        const isChecked = state.userAnswers[q.id] === label;
+                        return `
+                          <button onclick="selectOption('${q.id}', '${label}')" class="p-3 text-left text-xs sm:text-sm rounded-xl border flex items-start gap-2.5 transition ${isChecked ? 'border-sky-600 bg-sky-50 font-bold text-sky-950 ring-1 ring-sky-500' : 'border-slate-200 hover:bg-slate-50 text-slate-700'}">
+                            <span class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${isChecked ? 'bg-sky-600 text-white' : 'bg-slate-100 text-slate-600'}">${label}</span>
+                            <span class="pt-0.5">${opt}</span>
+                          </button>
+                        `;
+                      }).join("")}
+                    </div>
+                  ` : ''}
+
+                  ${q.part === 2 ? `
+                    <div class="space-y-2">
+                      ${q.subQuestions.map(sq => {
+                        const ans = state.userAnswers[q.id] && state.userAnswers[q.id][sq.label];
+                        return `
+                          <div class="p-3 rounded-xl border border-slate-200 bg-slate-50/50 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs sm:text-sm">
+                            <div class="flex items-start gap-2">
+                              <span class="font-bold text-sky-700">${sq.label})</span>
+                              <div>${sq.text}</div>
+                            </div>
+                            <div class="flex items-center gap-2 shrink-0">
+                              <button onclick="selectTrueFalse('${q.id}', '${sq.label}', true)" class="px-3 py-1.5 text-xs font-bold rounded-lg border transition ${ans === true ? 'bg-emerald-600 text-white border-emerald-600' : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-100'}">Đúng</button>
+                              <button onclick="selectTrueFalse('${q.id}', '${sq.label}', false)" class="px-3 py-1.5 text-xs font-bold rounded-lg border transition ${ans === false ? 'bg-rose-600 text-white border-rose-600' : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-100'}">Sai</button>
+                            </div>
+                          </div>
+                        `;
+                      }).join("")}
+                    </div>
+                  ` : ''}
+
+                  ${q.part === 3 ? `
+                    <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                      <label class="block text-xs font-medium text-slate-600 mb-1">
+                        Nhập câu trả lời ngắn (tối đa 4 ký tự):
+                      </label>
+                      <input type="text" maxlength="8" oninput="saveShortAnswer('${q.id}', this.value)" value="${state.userAnswers[q.id] || ''}" placeholder="Ví dụ: 450, 5, 20..." class="w-48 px-3 py-2 text-xs font-bold rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500 bg-white" />
+                    </div>
+                  ` : ''}
+                </div>
+              `).join("")}
+            </div>
+
+            <!-- Nút nộp bài -->
+            <div class="pt-4 flex justify-end">
+              <button onclick="submitExam(false)" class="px-8 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs sm:text-sm rounded-xl shadow-md transition flex items-center gap-2">
+                <i class="fa-solid fa-paper-plane"></i> Nộp bài thi chính thức
+              </button>
+            </div>
+          </div>
+
+          <!-- Cột bên phải: Bảng điều hướng câu hỏi & Thời gian -->
+          <div class="lg:col-span-1 space-y-4">
+            <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs sticky top-20 space-y-4">
+              <div class="text-center p-3 bg-sky-50 rounded-xl border border-sky-100">
+                <div class="text-[11px] font-bold text-sky-700 uppercase tracking-wider">Thời gian còn lại</div>
+                <div class="text-2xl font-black text-sky-800 font-mono mt-1" id="exam-timer-text">${timeStr}</div>
+              </div>
+
+              <div>
+                <div class="text-xs font-bold text-slate-700 mb-2">Bảng câu hỏi:</div>
+                <div class="grid grid-cols-5 gap-1.5">
+                  ${state.currentExam.questions.map((q, idx) => {
+                    const isAnswered = q.part === 1 ? !!state.userAnswers[q.id] :
+                      q.part === 2 ? Object.keys(state.userAnswers[q.id] || {}).length === 4 :
+                      !!(state.userAnswers[q.id] && state.userAnswers[q.id].trim());
+                    const isMarked = state.bookmarked[q.id];
+                    let bg = "bg-slate-100 text-slate-700 hover:bg-slate-200";
+                    if (isAnswered) bg = "bg-emerald-600 text-white";
+                    if (isMarked) bg = "bg-amber-400 text-slate-900 font-black";
+                    return `
+                      <button onclick="scrollToQuestion('${q.id}')" class="h-8 rounded-lg text-xs font-bold transition flex items-center justify-center ${bg}">
+                        ${idx + 1}
+                      </button>
+                    `;
+                  }).join("")}
+                </div>
+              </div>
+
+              <div class="pt-2 border-t border-slate-100 text-[11px] space-y-1.5 text-slate-500">
+                <div class="flex items-center gap-2">
+                  <span class="w-3 h-3 rounded bg-emerald-600 inline-block"></span>
+                  <span>Đã trả lời</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="w-3 h-3 rounded bg-amber-400 inline-block"></span>
+                  <span>Đã đánh dấu</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="w-3 h-3 rounded bg-slate-100 border inline-block"></span>
+                  <span>Chưa làm</span>
+                </div>
+              </div>
+
+              <button onclick="submitExam(false)" class="w-full py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl shadow-xs transition">
+                Nộp bài thi
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function selectOption(qId, label) {
+      state.userAnswers[qId] = label;
+      renderContent();
+    }
+
+    function selectTrueFalse(qId, subLabel, val) {
+      if (!state.userAnswers[qId]) state.userAnswers[qId] = {};
+      state.userAnswers[qId][subLabel] = val;
+      renderContent();
+    }
+
+    function saveShortAnswer(qId, val) {
+      state.userAnswers[qId] = val;
+    }
+
+    function toggleBookmark(qId) {
+      state.bookmarked[qId] = !state.bookmarked[qId];
+      renderContent();
+    }
+
+    function scrollToQuestion(qId) {
+      const el = document.getElementById("q-box-" + qId);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
+    function submitExam(force = false) {
+      if (!force) {
+        if (!confirm("Em có chắc chắn muốn nộp bài thi không?")) return;
+      }
+      if (state.examTimerInterval) clearInterval(state.examTimerInterval);
+
+      let p1Score = 0;
+      let p2Score = 0;
+      let p3Score = 0;
+      const details = {};
+
+      state.currentExam.questions.forEach(q => {
+        if (q.part === 1) {
+          const uAns = state.userAnswers[q.id];
+          const isCorrect = uAns === q.correctAnswer;
+          const score = isCorrect ? 0.25 : 0;
+          p1Score += score;
+          details[q.id] = { earned: score, isCorrect };
+        } else if (q.part === 2) {
+          const uSub = state.userAnswers[q.id] || {};
+          let count = 0;
+          q.subQuestions.forEach(sq => {
+            if (uSub[sq.label] === sq.correct) count++;
+          });
+          let score = 0;
+          if (count === 1) score = 0.1;
+          else if (count === 2) score = 0.25;
+          else if (count === 3) score = 0.5;
+          else if (count === 4) score = 1.0;
+          p2Score += score;
+          details[q.id] = { earned: score, countCorrect: count };
+        } else if (q.part === 3) {
+          const uAns = (state.userAnswers[q.id] || "").trim().replace(",", ".");
+          const correct = String(q.correctAnswer).trim().replace(",", ".");
+          const isCorrect = uAns.toLowerCase() === correct.toLowerCase() ||
+            (!isNaN(parseFloat(uAns)) && Math.abs(parseFloat(uAns) - parseFloat(correct)) < 0.01);
+          const score = isCorrect ? 0.5 : 0;
+          p3Score += score;
+          details[q.id] = { earned: score, isCorrect };
+        }
+      });
+
+      p1Score = Math.round(p1Score * 100) / 100;
+      p2Score = Math.round(p2Score * 100) / 100;
+      p3Score = Math.round(p3Score * 100) / 100;
+      const totalScore = Math.round((p1Score + p2Score + p3Score) * 100) / 100;
+      const durationMin = Math.round((5400 - state.examTimerSec) / 60);
+
+      state.examResult = {
+        p1Score,
+        p2Score,
+        p3Score,
+        totalScore,
+        durationMin,
+        details,
+        submittedAt: new Date().toLocaleTimeString().slice(0, 5) + " " + new Date().toLocaleDateString()
+      };
+
+      state.examAttempts.unshift({
+        id: "ATT-" + Date.now(),
+        studentId: state.currentUser.id,
+        studentName: state.currentUser.name,
+        className: state.currentUser.className || "Lớp 9",
+        examTitle: state.currentExam.title,
+        part1Score: p1Score,
+        part2Score: p2Score,
+        part3Score: p3Score,
+        totalScore: totalScore,
+        durationMin: durationMin,
+        submittedAt: state.examResult.submittedAt
+      });
+
+      showModal("Nộp bài thành công", `Tổng điểm: ${totalScore}/10 điểm\n- Phần I: ${p1Score}đ\n- Phần II: ${p2Score}đ\n- Phần III: ${p3Score}đ\nThời gian làm: ${durationMin} phút.`);
+      renderContent();
+    }
+
+    function renderExamResult(container) {
+      const res = state.examResult;
+      container.innerHTML = `
+        <div class="space-y-6 max-w-4xl mx-auto pb-12">
+          <div class="bg-white rounded-3xl p-6 sm:p-8 text-center border border-slate-200 shadow-sm space-y-4">
+            <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mx-auto text-2xl font-black">
+              ✓
+            </div>
+            <h2 class="text-xl sm:text-2xl font-black text-slate-800">Kết quả bài thi thử vào lớp 10</h2>
+            <div class="text-4xl sm:text-5xl font-black text-sky-700 font-mono">
+              ${res.totalScore} <span class="text-lg text-slate-400 font-sans">/ 10 điểm</span>
+            </div>
+            <div class="grid grid-cols-3 gap-3 max-w-lg mx-auto pt-2 text-xs">
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+                <div class="text-slate-400 font-semibold">Phần I (3đ)</div>
+                <div class="font-extrabold text-slate-700 text-sm mt-0.5">${res.p1Score}đ</div>
+              </div>
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+                <div class="text-slate-400 font-semibold">Phần II (4đ)</div>
+                <div class="font-extrabold text-slate-700 text-sm mt-0.5">${res.p2Score}đ</div>
+              </div>
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+                <div class="text-slate-400 font-semibold">Phần III (3đ)</div>
+                <div class="font-extrabold text-slate-700 text-sm mt-0.5">${res.p3Score}đ</div>
+              </div>
+            </div>
+            <div class="pt-4 flex justify-center gap-3">
+              <button onclick="startAutoExam()" class="px-5 py-2.5 bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs rounded-xl shadow-xs transition">
+                Thi đề khác
+              </button>
+              <button onclick="setTab('dashboard')" class="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl transition">
+                Về trang chủ
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // Quản lý Lớp học & Tạo tài khoản cho Học sinh (Dành cho Admin và Thầy Thoan)
+    function renderClassManagement(container) {
+      if (state.currentUser.role === "student") {
+        container.innerHTML = `
+          <div class="p-8 text-center bg-white rounded-2xl border border-slate-200 text-slate-500 text-xs">
+            Bạn không có quyền truy cập vào mục Quản trị tài khoản và Lớp học!
+          </div>
+        `;
+        return;
+      }
+
+      const students = state.userAccounts.filter(u => u.role === "student");
+
+      container.innerHTML = `
+        <div class="space-y-6 max-w-6xl mx-auto pb-12">
+          <!-- Header thanh tác vụ -->
+          <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <span class="text-[11px] font-bold text-sky-700 bg-sky-50 px-2.5 py-1 rounded-full uppercase tracking-wider">
+                Phân quyền Quản trị & Giáo viên
+              </span>
+              <h2 class="text-lg sm:text-xl font-black text-slate-800 mt-2 flex items-center gap-2">
+                <i class="fa-solid fa-chalkboard-user text-sky-600"></i> Quản lý Lớp & Cấp Tài khoản Học sinh
+              </h2>
+              <p class="text-xs text-slate-500 mt-1">
+                Tài khoản thao tác: <strong>${state.currentUser.name}</strong> (${state.currentUser.role === 'admin' ? 'Quản trị viên' : 'Thầy Nguyễn Văn Thoan'})
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <button onclick="promptCreateSingleStudent()" class="px-3.5 py-2 bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold rounded-xl shadow-xs transition flex items-center gap-1.5">
+                <i class="fa-solid fa-user-plus"></i> Tạo 1 tài khoản
+              </button>
+              <button onclick="promptBatchCreateStudents()" class="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-xs transition flex items-center gap-1.5">
+                <i class="fa-solid fa-file-excel"></i> Cấp theo danh sách lớp
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <!-- Cột trái: Quản lý danh sách Lớp học -->
+            <div class="md:col-span-1 space-y-4">
+              <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs space-y-3">
+                <div class="flex items-center justify-between border-b pb-2">
+                  <span class="text-xs font-bold uppercase text-slate-600">Danh sách Lớp (${state.classList.length})</span>
+                  <button onclick="promptCreateClass()" class="text-xs text-sky-600 hover:underline font-bold">+ Tạo lớp</button>
+                </div>
+                <div class="space-y-2">
+                  ${state.classList.map((cls) => {
+                    const countInClass = students.filter(s => s.classId === cls.id).length;
+                    return `
+                      <div class="p-3 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-slate-50 transition text-xs">
+                        <div class="font-bold text-slate-800">${cls.name}</div>
+                        <div class="text-[11px] text-slate-500 mt-1 flex justify-between">
+                          <span>Mã lớp: <strong class="text-sky-700 font-mono">${cls.joinCode}</strong></span>
+                          <span><strong>${countInClass}</strong> học sinh</span>
+                        </div>
+                      </div>
+                    `;
+                  }).join("")}
+                </div>
+              </div>
+
+              <!-- Hướng dẫn cấp tài khoản -->
+              <div class="bg-sky-50 border border-sky-100 rounded-2xl p-4 text-xs text-sky-900 space-y-2">
+                <div class="font-bold flex items-center gap-1.5">
+                  <i class="fa-solid fa-shield-halved"></i> Quy tắc bảo mật:
+                </div>
+                <p class="text-[11px] leading-relaxed text-sky-800">
+                  - Học sinh không thể tự đăng ký tự do để tránh gian lận điểm và lẫn lộn lớp học.<br/>
+                  - Admin và Thầy Thoan cấp tài khoản theo lớp và xuất danh sách gửi trực tiếp cho phụ huynh/học sinh.
+                </p>
+                <button onclick="exportStudentCredentialsCSV()" class="w-full mt-1 py-2 bg-white hover:bg-sky-100 text-sky-800 font-bold rounded-lg border border-sky-200 shadow-2xs transition flex items-center justify-center gap-1 text-[11px]">
+                  <i class="fa-solid fa-download"></i> Xuất file tài khoản đã cấp
+                </button>
+              </div>
+            </div>
+
+            <!-- Cột phải: Danh sách tài khoản Học sinh đã tạo -->
+            <div class="md:col-span-3 bg-white rounded-2xl shadow-sm border border-slate-200 p-5 space-y-4">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b pb-3">
+                <div>
+                  <h3 class="font-bold text-sm text-slate-800 flex items-center gap-2">
+                    <i class="fa-solid fa-address-card text-sky-600"></i> Danh sách Học sinh đã cấp tài khoản (${students.length} em)
+                  </h3>
+                  <p class="text-[11px] text-slate-400">Chỉ học sinh có trong danh sách dưới đây mới có quyền đăng nhập làm bài</p>
+                </div>
+              </div>
+
+              ${students.length === 0 ? `
+                <div class="py-12 text-center text-slate-400 text-xs">
+                  Chưa có tài khoản học sinh nào được cấp. Thầy/Cô hãy bấm <strong>"Cấp theo danh sách lớp"</strong> hoặc <strong>"Tạo 1 tài khoản"</strong> ở trên để tạo tài khoản cho học sinh.
+                </div>
+              ` : `
+                <div class="overflow-x-auto">
+                  <table class="w-full text-left text-xs text-slate-600">
+                    <thead class="bg-slate-50 text-slate-400 uppercase border-b text-[11px]">
+                      <tr>
+                        <th class="p-3">Họ và tên</th>
+                        <th class="p-3">Lớp</th>
+                        <th class="p-3">Tên đăng nhập</th>
+                        <th class="p-3">Mật khẩu cấp</th>
+                        <th class="p-3 text-center">Thao tác</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                      ${students.map(st => `
+                        <tr class="hover:bg-slate-50/50 transition">
+                          <td class="p-3 font-bold text-slate-800">
+                            ${st.name}
+                            <div class="text-[10px] text-slate-400 font-normal">Cấp ngày: ${st.createdAt || '18/10/2026'}</div>
+                          </td>
+                          <td class="p-3">
+                            <span class="bg-sky-50 text-sky-700 px-2 py-0.5 rounded font-semibold text-[11px]">${st.className}</span>
+                          </td>
+                          <td class="p-3 font-mono font-bold text-slate-700">${st.username}</td>
+                          <td class="p-3 font-mono text-slate-500">
+                            <code class="bg-slate-100 px-2 py-0.5 rounded text-[11px] text-slate-800">${st.password}</code>
+                          </td>
+                          <td class="p-3 text-center">
+                            <button onclick="promptResetPassword('${st.id}')" title="Đổi mật khẩu cho học sinh" class="px-2 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded text-[11px] font-semibold mr-1">
+                              <i class="fa-solid fa-key"></i> Đổi MK
+                            </button>
+                            <button onclick="deleteStudentAccount('${st.id}')" title="Xóa tài khoản này" class="px-2 py-1 bg-rose-50 hover:bg-rose-100 text-rose-700 rounded text-[11px] font-semibold">
+                              <i class="fa-solid fa-trash-can"></i>
+                            </button>
+                          </td>
+                        </tr>
+                      `).join("")}
+                    </tbody>
+                  </table>
+                </div>
+              `}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // Tạo đơn lẻ 1 tài khoản học sinh
+    function promptCreateSingleStudent() {
+      const name = prompt("1. Nhập Họ và Tên học sinh (Ví dụ: Nguyễn Minh Đức):");
+      if (!name) return;
+
+      const classChoice = state.classList[0]?.name || "Lớp 9A1";
+      const usernameDefault = "hs." + removeVietnameseTones(name.trim().toLowerCase()).replace(/\s+/g, "");
+      const username = prompt("2. Nhập Tên đăng nhập cho học sinh (Viết liền không dấu):", usernameDefault);
+      if (!username) return;
+
+      // Kiểm tra trùng tên đăng nhập
+      if (state.userAccounts.some(u => u.username.toLowerCase() === username.trim().toLowerCase())) {
+        showModal("Lỗi trùng lặp", "Tên đăng nhập này đã tồn tại trên hệ thống! Vui lòng chọn tên đăng nhập khác.", true);
+        return;
+      }
+
+      const password = prompt("3. Nhập mật khẩu khởi tạo:", "123456");
+      if (!password) return;
+
+      const newStudent = {
+        id: "usr-st-" + Date.now(),
+        username: username.trim().toLowerCase(),
+        password: password.trim(),
+        name: name.trim(),
+        email: `${username.trim().toLowerCase()}@toan9hp.edu.vn`,
+        role: "student",
+        classId: state.classList[0]?.id || "class-9a1",
+        className: classChoice,
+        createdAt: new Date().toLocaleDateString()
+      };
+
+      state.userAccounts.push(newStudent);
+      showModal("Cấp tài khoản thành công", `Đã cấp tài khoản cho học sinh: ${name}\nTên đăng nhập: ${username}\nMật khẩu: ${password}`);
+      renderContent();
+    }
+
+    // Cấp hàng loạt tài khoản học sinh theo danh sách lớp
+    function promptBatchCreateStudents() {
+      const sampleText = "Trần Thị Mai Anh, 9A1\nNguyễn Minh Đức, 9A1\nPhạm Hải Đăng, 9A2\nLê Hoàng Nam, 9A2";
+      const input = prompt(
+        "Nhập danh sách học sinh theo định dạng: Họ và tên, Tên Lớp (Mỗi em một dòng):\nVí dụ:\nTrần Thị Mai Anh, 9A1\nNguyễn Minh Đức, 9A1",
+        sampleText
+      );
+      if (!input) return;
+
+      const lines = input.split("\n");
+      let count = 0;
+
+      lines.forEach((line) => {
+        const parts = line.split(",").map(p => p.trim());
+        if (parts.length >= 1 && parts[0]) {
+          const stName = parts[0];
+          const className = parts[1] || state.classList[0]?.name || "Lớp 9A1";
+          const rawSlug = removeVietnameseTones(stName.toLowerCase()).replace(/\s+/g, "");
+          let uName = "hs." + rawSlug;
+          let counter = 1;
+          while (state.userAccounts.some(u => u.username === uName)) {
+            uName = "hs." + rawSlug + counter;
+            counter++;
+          }
+
+          state.userAccounts.push({
+            id: "usr-st-" + Date.now() + Math.floor(Math.random() * 1000),
+            username: uName,
+            password: "hp" + Math.floor(100000 + Math.random() * 900000), // Mật khẩu 6 số ngẫu nhiên an toàn
+            name: stName,
+            email: `${uName}@toan9hp.edu.vn`,
+            role: "student",
+            classId: state.classList.find(c => c.name.includes(className))?.id || state.classList[0]?.id,
+            className: className,
+            createdAt: new Date().toLocaleDateString()
+          });
+          count++;
+        }
+      });
+
+      showModal("Hoàn tất cấp tài khoản hàng loạt", `Hệ thống đã tự động cấp thành công ${count} tài khoản học sinh!\nThầy/Cô có thể bấm "Xuất file tài khoản đã cấp" để gửi phiếu đăng nhập cho các em.`);
+      renderContent();
+    }
+
+    // Đổi mật khẩu học sinh
+    function promptResetPassword(userId) {
+      const u = state.userAccounts.find(x => x.id === userId);
+      if (!u) return;
+      const newPass = prompt(`Nhập mật khẩu mới cho học sinh ${u.name}:`, "123456");
+      if (newPass) {
+        u.password = newPass.trim();
+        showModal("Thành công", `Đã cập nhật mật khẩu mới cho ${u.name}: ${u.password}`);
+        renderContent();
+      }
+    }
+
+    // Xóa tài khoản học sinh
+    function deleteStudentAccount(userId) {
+      const u = state.userAccounts.find(x => x.id === userId);
+      if (!u) return;
+      if (confirm(`Thầy/Cô có chắc chắn muốn xóa tài khoản của học sinh ${u.name} (${u.username}) không?`)) {
+        state.userAccounts = state.userAccounts.filter(x => x.id !== userId);
+        renderContent();
+      }
+    }
+
+    // Xuất file thông tin tài khoản học sinh đã cấp ra CSV
+    function exportStudentCredentialsCSV() {
+      const students = state.userAccounts.filter(u => u.role === "student");
+      if (students.length === 0) {
+        showModal("Thông báo", "Chưa có tài khoản học sinh nào để xuất tệp!");
+        return;
+      }
+      let csv = "STT,Họ và tên,Lớp,Tên đăng nhập,Mật khẩu,Ngày cấp,Trạng thái\n";
+      students.forEach((st, idx) => {
+        csv += `${idx + 1},"${st.name}","${st.className}","${st.username}","${st.password}","${st.createdAt || '18/10/2026'}","Đã kích hoạt"\n`;
+      });
+      downloadFile(csv, "Danh_sach_tai_khoan_HocSinh_Toan9_HaiPhong.csv");
+    }
+
+    // Hàm tiện ích loại bỏ dấu tiếng Việt để sinh tên đăng nhập
+    function removeVietnameseTones(str) {
+      str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
+      str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
+      str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
+      str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
+      str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
+      str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
+      str = str.replace(/đ/g, "d");
+      str = str.replace(/\u0300|\u0301|\u0303|\u0309|\u0323/g, "");
+      str = str.replace(/\u02C6|\u0306|\u031B/g, "");
+      return str;
+    }
+
+    function promptCreateClass() {
+      const name = prompt("Nhập tên lớp học mới (Ví dụ: Lớp 9A3):");
+      if (!name) return;
+      const code = "HP" + Math.floor(100 + Math.random() * 900);
+      state.classList.push({ id: "cls-" + Date.now(), name, joinCode: code });
+      showModal("Thành công", `Đã tạo lớp ${name} thành công với mã ${code}`);
+      renderContent();
+    }
+
+    function promptAddStudent() {
+      const name = prompt("Nhập họ tên học sinh:");
+      if (!name) return;
+      const email = prompt("Nhập email/tên đăng nhập:");
+      if (!email) return;
+      state.studentList.push({
+        id: "st-" + Date.now(),
+        name,
+        email,
+        classId: state.classList[0]?.id || "",
+        totalExams: 0,
+        avgScore: 0
+      });
+      showModal("Thành công", `Đã thêm học sinh ${name}`);
+      renderContent();
+    }
+
+    function renderQuestionBank(container) {
+      container.innerHTML = `
+        <div class="space-y-4 max-w-6xl mx-auto pb-12">
+          <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <h2 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+                <i class="fa-solid fa-boxes-stacked text-sky-600"></i> Ngân hàng câu hỏi Toán 9 Hải Phòng
+              </h2>
+              <p class="text-xs text-slate-500 mt-1">Phụ trách thẩm định: <strong>Thầy Nguyễn Văn Thoan</strong> | ${QUESTION_BANK.length} câu hỏi đã duyệt</p>
+            </div>
+            <button onclick="exportCSVBank()" class="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold rounded-lg shadow-sm">
+              <i class="fa-solid fa-file-excel mr-1"></i> Xuất file câu hỏi (Excel/CSV)
+            </button>
+          </div>
+
+          <div class="space-y-3">
+            ${QUESTION_BANK.map(q => `
+              <div class="bg-white rounded-2xl shadow-xs border border-slate-200 p-4 space-y-2 text-xs">
+                <div class="flex justify-between items-center border-b pb-2">
+                  <span class="font-bold text-sky-700">#${q.id} - ${q.topic}</span>
+                  <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-700 font-bold">${q.status}</span>
+                </div>
+                <div class="text-slate-800 font-medium text-sm">${q.content}</div>
+                ${q.solution ? `<div class="p-2.5 bg-slate-50 rounded-lg text-slate-600"><strong>Lời giải:</strong> ${q.solution}</div>` : ''}
+              </div>
+            `).join("")}
+          </div>
+        </div>
+      `;
+    }
+
+    function exportCSVBank() {
+      let csv = "Mã câu,Phần,Chủ đề,Nội dung,Đáp án,Nguồn\n";
+      QUESTION_BANK.forEach(q => {
+        csv += `"${q.id}",${q.part},"${q.topic}","${q.content.replace(/"/g, '""')}","${q.correctAnswer || ''}","${q.source}"\n`;
+      });
+      downloadFile(csv, "Ngan_hang_cau_hoi_Toan9_HaiPhong.csv");
+    }
+
+    function renderAnalytics(container) {
+      const isStudent = state.currentUser.role === "student";
+      const attempts = isStudent 
+        ? state.examAttempts.filter(a => a.studentId === state.currentUser.id)
+        : state.examAttempts;
+
+      container.innerHTML = `
+        <div class="space-y-6 max-w-6xl mx-auto pb-12">
+          <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <h2 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+                <i class="fa-solid fa-chart-line text-sky-600"></i> ${isStudent ? 'Tiến độ học tập cá nhân' : 'Bảng theo dõi học sinh & Báo cáo kết quả'}
+              </h2>
+              <p class="text-xs text-slate-500 mt-1">${isStudent ? 'Học sinh chỉ xem dữ liệu của riêng mình' : 'Giáo viên theo dõi kết quả lớp'}</p>
+            </div>
+            ${!isStudent ? `
+              <button onclick="exportScoresCSV()" class="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold rounded-lg shadow-sm">
+                <i class="fa-solid fa-file-excel mr-1"></i> Tải báo cáo điểm (CSV)
+              </button>
+            ` : ''}
+          </div>
+
+          <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+            <div class="p-4 border-b font-bold text-xs text-slate-800">Nhật ký làm bài gần nhất</div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs text-slate-600">
+                <thead class="bg-slate-50 text-slate-400 uppercase border-b">
+                  <tr>
+                    <th class="p-3">Học sinh</th>
+                    <th class="p-3">Phần I (3đ)</th>
+                    <th class="p-3">Phần II (4đ)</th>
+                    <th class="p-3">Phần III (3đ)</th>
+                    <th class="p-3">Tổng điểm</th>
+                    <th class="p-3">Thời gian</th>
+                    <th class="p-3">Ngày nộp</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                  ${attempts.map(att => `
+                    <tr>
+                      <td class="p-3 font-bold text-slate-800">${att.studentName}</td>
+                      <td class="p-3">${att.part1Score}</td>
+                      <td class="p-3">${att.part2Score}</td>
+                      <td class="p-3">${att.part3Score}</td>
+                      <td class="p-3 font-extrabold text-sky-700">${att.totalScore} đ</td>
+                      <td class="p-3">${att.durationMin} phút</td>
+                      <td class="p-3 text-[11px] text-slate-400">${att.submittedAt}</td>
+                    </tr>
+                  `).join("")}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function exportScoresCSV() {
+      let csv = "Tên học sinh,Lớp,Phần I,Phần II,Phần III,Tổng điểm,Thời gian(phút),Ngày nộp\n";
+      state.examAttempts.forEach(a => {
+        csv += `"${a.studentName}","${a.className}",${a.part1Score},${a.part2Score},${a.part3Score},${a.totalScore},${a.durationMin},"${a.submittedAt}"\n`;
+      });
+      downloadFile(csv, "Bang_diem_Toan9_HaiPhong.csv");
+    }
+
+    // Tải tệp dữ liệu tương thích an toàn trong iFrame sandbox
+    function downloadFile(content, fileName) {
+      const blob = new Blob(["\uFEFF" + content], { type: "text/csv;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = fileName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      showModal("Thành công", `Đã tải xuống tệp: ${fileName}`);
+    }
+
+    // Đăng ký sự kiện an toàn với kiểm tra phần tử tồn tại
+    const quickSwitchBtn = document.getElementById("btn-quick-switch-role");
+    if (quickSwitchBtn) {
+      quickSwitchBtn.addEventListener("click", () => {
+        if (!state.currentUser || state.currentUser.role === "teacher") {
+          state.currentUser = { id: "student-01", name: "Nguyễn Minh Đức", email: "duc.nm9a1@student.edu.vn", role: "student", className: "Lớp 9A1" };
+          showModal("Chuyển vai trò", "Hiện tại bạn đang ở vai trò HỌC SINH (Chỉ xem điểm & bài thi cá nhân).");
+        } else if (state.currentUser.role === "student") {
+          state.currentUser = { id: "admin-01", name: "Quản trị viên Hệ thống", email: "admin@toan9hp.edu.vn", role: "admin", className: "Toàn trường" };
+          showModal("Chuyển vai trò", "Hiện tại bạn đang ở vai trò QUẢN TRỊ VIÊN.");
+        } else {
+          state.currentUser = { id: "usr-teacher-01", name: "Thầy Nguyễn Văn Thoan", email: "thoan.nv@haiphong.edu.vn", role: "teacher", className: "Giáo viên Toán" };
+          showModal("Chuyển vai trò", "Hiện tại bạn đang ở vai trò GIÁO VIÊN: Thầy Nguyễn Văn Thoan.");
+        }
+        renderNavigation();
+        renderContent();
+      });
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      // Khởi động hệ thống: yêu cầu đăng nhập trước
+      renderNavigation();
+      renderContent();
+      openLoginModal();
+    });
+  </script>
+</body>
+</html>
