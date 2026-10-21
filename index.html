@@ -11,7 +11,7 @@
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   
-  <!-- KaTeX CSS & JS với cdnjs ổn định cho Google Sites -->
+  <!-- KaTeX CSS & JS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.8/katex.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.8/katex.min.js"></script>
 
@@ -24,7 +24,6 @@
       overflow-x: hidden;
     }
     .katex { font-size: 1.05em; }
-    /* Thanh cuộn mảnh */
     ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-track { background: #f1f5f9; }
     ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
@@ -38,35 +37,26 @@
     <header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-xs">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         <div class="flex items-center gap-3">
-          <!-- Logo chính thức Trường THCS Trường Tân 2 - TP Hải Phòng -->
           <div class="w-11 h-11 sm:w-12 sm:h-12 shrink-0 drop-shadow-xs transition-transform hover:scale-105 duration-200">
             <svg viewBox="0 0 200 200" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <path id="textPathUpper" d="M 28,100 A 72,72 0 1,1 172,100" />
                 <path id="textPathLower" d="M 172,100 A 72,72 0 0,1 28,100" />
               </defs>
-              <!-- Viền ngoài & nền đỏ trường học chuẩn nhận diện -->
               <circle cx="100" cy="100" r="98" fill="#c5282f" stroke="#ffffff" stroke-width="2"/>
               <circle cx="100" cy="100" r="93" fill="none" stroke="#ffffff" stroke-width="2.5"/>
               <circle cx="100" cy="100" r="62" fill="#ffffff"/>
               <circle cx="100" cy="100" r="58.5" fill="#c5282f"/>
-              
-              <!-- Dòng chữ vòng cung phía trên: TRƯỜNG THCS TRƯỜNG TÂN 2 -->
-              <text fill="#ffffff" font-size="13" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="900" letter-spacing="1.2">
+              <text fill="#ffffff" font-size="13" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" letter-spacing="1.2">
                 <textPath href="#textPathUpper" startOffset="50%" text-anchor="middle">
                   TRƯỜNG THCS TRƯỜNG TÂN 2
                 </textPath>
               </text>
-              
-              <!-- Dòng chữ vòng cung phía dưới: THÀNH PHỐ HẢI PHÒNG -->
-              <text fill="#ffffff" font-size="11.5" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="800" letter-spacing="1.8">
+              <text fill="#ffffff" font-size="11.5" font-family="'Segoe UI', Roboto, sans-serif" font-weight="800" letter-spacing="1.8">
                 <textPath href="#textPathLower" startOffset="50%" text-anchor="middle">
                   THÀNH PHỐ HẢI PHÒNG
                 </textPath>
               </text>
-              
-              <!-- Biểu tượng hoa phượng đỏ hai bên hông -->
-              <!-- Hoa bên trái -->
               <g transform="translate(20, 100) scale(0.9)">
                 <circle cx="-1.5" cy="0" r="2.2" fill="#ffffff"/>
                 <circle cx="-5" cy="-3.5" r="2.6" fill="#ffffff"/>
@@ -75,7 +65,6 @@
                 <circle cx="2" cy="3.5" r="2.6" fill="#ffffff"/>
                 <circle cx="-6.5" cy="0" r="2.6" fill="#ffffff"/>
               </g>
-              <!-- Hoa bên phải -->
               <g transform="translate(180, 100) scale(0.9)">
                 <circle cx="1.5" cy="0" r="2.2" fill="#ffffff"/>
                 <circle cx="-2" cy="-3.5" r="2.6" fill="#ffffff"/>
@@ -84,12 +73,7 @@
                 <circle cx="5" cy="3.5" r="2.6" fill="#ffffff"/>
                 <circle cx="6.5" cy="0" r="2.6" fill="#ffffff"/>
               </g>
-
-              <!-- Biểu tượng cuốn sách và chữ cách điệu trung tâm (màu trắng) -->
-              <!-- Gáy sách & trang sách mở phía trên -->
               <path d="M 62,68 C 76,73 88,68 100,75 C 112,68 124,73 138,68 L 138,74 C 124,79 112,74 100,81 C 88,74 76,79 62,74 Z" fill="#ffffff"/>
-              
-              <!-- Khối đồ họa chữ M/T & Tháp tri thức cách điệu ở giữa -->
               <path d="M 62,81 L 138,81 L 138,91 L 105.5,91 L 105.5,152 L 94.5,152 L 94.5,91 L 62,91 Z" fill="#ffffff"/>
               <path d="M 71,97 L 90.5,97 L 90.5,142 L 71,142 L 71,133 L 81.5,133 L 81.5,106 L 71,106 Z" fill="#ffffff"/>
               <path d="M 129,97 L 109.5,97 L 109.5,142 L 129,142 L 129,133 L 118.5,133 L 118.5,106 L 129,106 Z" fill="#ffffff"/>
@@ -110,12 +94,10 @@
           </div>
         </div>
 
-        <!-- Điều hướng máy tính & tablet -->
         <nav class="hidden md:flex items-center gap-1 text-xs font-semibold" id="main-nav">
           <!-- Rendered by JS -->
         </nav>
 
-        <!-- Thông tin người dùng & Chuyển vai trò -->
         <div class="flex items-center gap-2">
           <div class="text-right hidden sm:block">
             <div id="user-display-name" class="text-xs font-bold text-slate-800">Thầy Nguyễn Văn Thoan</div>
@@ -126,22 +108,18 @@
           </button>
         </div>
       </div>
-      <!-- Menu phụ trên mobile -->
       <div class="md:hidden flex overflow-x-auto border-t border-slate-100 bg-slate-50 px-2 py-1.5 gap-1 text-xs font-medium" id="mobile-nav">
       </div>
     </header>
 
     <!-- Khu vực nội dung động -->
     <main class="flex-1 max-w-7xl w-full mx-auto p-3 sm:p-6 lg:p-8" id="main-content">
-      <!-- Sẽ được kết xuất bằng JavaScript thuần tương thích mọi iFrame -->
     </main>
   </div>
 
-  <!-- Modal đăng nhập hệ thống -->
   <div id="login-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/75 backdrop-blur-sm p-4 hidden">
     <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full overflow-hidden border border-slate-200 animate-in fade-in zoom-in duration-200">
       <div class="bg-gradient-to-r from-sky-600 to-blue-700 p-6 text-white text-center relative">
-        <!-- Logo trường học trên header của hộp thoại đăng nhập -->
         <div class="w-16 h-16 mx-auto mb-2 drop-shadow-md">
           <svg viewBox="0 0 200 200" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
             <defs>
@@ -218,7 +196,6 @@
           <i class="fa-solid fa-right-to-bracket"></i> Đăng nhập hệ thống
         </button>
 
-        <!-- Khuôn viên Trường THCS Trường Tân 2 thay thế bảng hiển thị tài khoản -->
         <div class="rounded-2xl border border-sky-100 overflow-hidden bg-gradient-to-b from-sky-50/70 to-white shadow-xs">
           <div class="relative h-32 w-full overflow-hidden bg-slate-100 group">
             <img 
@@ -249,7 +226,6 @@
     </div>
   </div>
 
-  <!-- Modal thông báo hệ thống an toàn -->
   <div id="app-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-xs p-4 hidden">
     <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden border border-slate-200">
       <div id="modal-header" class="p-4 text-white flex items-center justify-between bg-sky-600">
@@ -269,7 +245,6 @@
   <script>
     // Dữ liệu ngân hàng câu hỏi chuẩn Sở Hải Phòng (QĐ 7008/QĐ-SGDĐT)
     const QUESTION_BANK = [
-      // PHẦN I
       {
         id: "HP-P1-001",
         part: 1,
@@ -438,8 +413,6 @@
         source: "Đề mẫu Hải Phòng - Đề 01",
         status: "Đã duyệt"
       },
-
-      // PHẦN II (Đúng/Sai)
       {
         id: "HP-P2-001",
         part: 2,
@@ -512,8 +485,6 @@
         source: "Đề cấu trúc chuẩn Sở Hải Phòng - Đề 01",
         status: "Đã duyệt"
       },
-
-      // PHẦN III (Trả lời ngắn)
       {
         id: "HP-P3-001",
         part: 3,
@@ -594,7 +565,6 @@
       }
     ];
 
-    // Danh mục các chủ đề chuẩn và 4 dạng theo cấu trúc đề thi Sở Hải Phòng
     const TOPIC_CATALOG = [
       {
         id: "topic-can-thuc",
@@ -663,91 +633,109 @@
       }
     ];
 
+    // Khởi tạo state với localStorage persistence để đảm bảo lưu giữ tài khoản học sinh khi F5 / chuyển tab
+    const defaultUserAccounts = [
+      {
+        id: "usr-admin-01",
+        username: "admin",
+        password: "admin@hp2026",
+        name: "Quản trị viên Hệ thống",
+        email: "admin@toan9hp.edu.vn",
+        role: "admin",
+        classId: null,
+        className: "Toàn trường",
+        createdAt: "18/10/2026"
+      },
+      {
+        id: "usr-teacher-01",
+        username: "thaythoan",
+        password: "thoan@hp2026",
+        name: "Thầy Nguyễn Văn Thoan",
+        email: "thoan.nv@haiphong.edu.vn",
+        role: "teacher",
+        classId: null,
+        className: "Giáo viên Toán THCS",
+        createdAt: "18/10/2026"
+      },
+      {
+        id: "usr-student-sample",
+        username: "hs.nguyenminhduc",
+        password: "123456",
+        name: "Nguyễn Minh Đức",
+        email: "hs.nguyenminhduc@toan9hp.edu.vn",
+        role: "student",
+        classId: "class-9a1",
+        className: "Lớp 9A1 - Chuyên Toán THCS Chu Văn An",
+        createdAt: "18/10/2026"
+      }
+    ];
+
+    const defaultClassList = [
+      { id: "class-9a1", name: "Lớp 9A1 - Chuyên Toán THCS Chu Văn An", teacherId: "usr-teacher-01", joinCode: "HP9A1" },
+      { id: "class-9a2", name: "Lớp 9A2 - Ôn thi vào 10 THCS Lê Lợi", teacherId: "usr-teacher-01", joinCode: "HP9A2" }
+    ];
+
+    const defaultLeaderboards = [
+      { id: "TL-01", studentId: "usr-student-sample", studentName: "Nguyễn Minh Đức", className: "Lớp 9A1", topicId: "topic-can-thuc", topicName: "Căn bậc hai & Căn thức đại số", totalPoints: 2.0, maxPoints: 2.0, completedCount: 4, totalCount: 4, completedAt: "18/10/2026 14:30" }
+    ];
+
+    const defaultExamAttempts = [
+      {
+        id: "ATT-001",
+        studentId: "usr-student-sample",
+        studentName: "Nguyễn Minh Đức",
+        className: "Lớp 9A1",
+        examTitle: "Đề thi thử vào 10 THPT Hải Phòng - Đề 01",
+        part1Score: 2.75,
+        part2Score: 3.25,
+        part3Score: 2.0,
+        totalScore: 8.0,
+        durationMin: 82,
+        submittedAt: "18/10/2026 09:22"
+      }
+    ];
+
+    // Nạp dữ liệu từ localStorage hoặc dùng mặc định
+    function loadPersistedState(key, defaultVal) {
+      const saved = localStorage.getItem("toan9_hp_" + key);
+      if (saved) {
+        try { return JSON.parse(saved); } catch(e) { return defaultVal; }
+      }
+      return defaultVal;
+    }
+
+    function savePersistedState(key, val) {
+      localStorage.setItem("toan9_hp_" + key, JSON.stringify(val));
+    }
+
     const state = {
-      // Hệ thống tài khoản người dùng được quản lý bởi Admin & Thầy Thoan
-      // Ban đầu chỉ có 2 tài khoản chính: admin & thầy Thoan
-      userAccounts: [
-        {
-          id: "usr-admin-01",
-          username: "admin",
-          password: "admin@hp2026",
-          name: "Quản trị viên Hệ thống",
-          email: "admin@toan9hp.edu.vn",
-          role: "admin",
-          classId: null,
-          className: "Toàn trường",
-          createdAt: "18/10/2026"
-        },
-        {
-          id: "usr-teacher-01",
-          username: "thaythoan",
-          password: "thoan@hp2026",
-          name: "Thầy Nguyễn Văn Thoan",
-          email: "thoan.nv@haiphong.edu.vn",
-          role: "teacher",
-          classId: null,
-          className: "Giáo viên Toán THCS",
-          createdAt: "18/10/2026"
-        }
-      ],
-      currentUser: null, // Chưa đăng nhập ban đầu
-      activeTab: "dashboard", // 'dashboard', 'topic_practice', 'exam_room', 'class_management', 'question_bank', 'analytics'
-      
-      // Ôn tập theo chuyên đề
+      userAccounts: loadPersistedState("userAccounts", defaultUserAccounts),
+      currentUser: loadPersistedState("currentUser", null),
+      activeTab: "dashboard",
       selectedTopicId: "topic-can-thuc",
-      selectedFormFilter: 0, // 0: Tất cả, 1, 2, 3, 4
+      selectedFormFilter: 0,
       topicPracticeAnswers: {},
       topicResult: null,
-
-      // Danh sách xếp hạng học sinh ôn tập theo chuyên đề
-      topicLeaderboards: [
-        { id: "TL-01", studentId: "student-02", studentName: "Trần Thị Mai Anh", className: "Lớp 9A1", topicId: "topic-can-thuc", topicName: "Căn bậc hai & Căn thức đại số", totalPoints: 2.0, maxPoints: 2.0, completedCount: 4, totalCount: 4, completedAt: "18/10/2026 14:15" },
-        { id: "TL-02", studentId: "student-01", studentName: "Nguyễn Minh Đức", className: "Lớp 9A1", topicId: "topic-can-thuc", topicName: "Căn bậc hai & Căn thức đại số", totalPoints: 1.75, maxPoints: 2.0, completedCount: 4, totalCount: 4, completedAt: "18/10/2026 14:30" },
-        { id: "TL-03", studentId: "student-03", studentName: "Phạm Hải Đăng", className: "Lớp 9A2", topicId: "topic-ham-so", topicName: "Hàm số & Phương trình thực tế", totalPoints: 1.5, maxPoints: 2.0, completedCount: 4, totalCount: 4, completedAt: "18/10/2026 13:50" }
-      ],
-
-      classList: [
-        { id: "class-9a1", name: "Lớp 9A1 - Chuyên Toán THCS Chu Văn An", teacherId: "usr-teacher-01", joinCode: "HP9A1" },
-        { id: "class-9a2", name: "Lớp 9A2 - Ôn thi vào 10 THCS Lê Lợi", teacherId: "usr-teacher-01", joinCode: "HP9A2" }
-      ],
-      studentList: [], // Sẽ đồng bộ từ danh sách userAccounts role='student'
-      examAttempts: [
-        {
-          id: "ATT-001",
-          studentId: "student-01",
-          studentName: "Nguyễn Minh Đức",
-          className: "Lớp 9A1",
-          examTitle: "Đề thi thử vào 10 THPT Hải Phòng - Đề 01",
-          part1Score: 2.75,
-          part2Score: 3.25,
-          part3Score: 2.0,
-          totalScore: 8.0,
-          durationMin: 82,
-          submittedAt: "18/10/2026 09:22"
-        },
-        {
-          id: "ATT-002",
-          studentId: "student-02",
-          studentName: "Trần Thị Mai Anh",
-          className: "Lớp 9A1",
-          examTitle: "Đề thi thử vào 10 THPT Hải Phòng - Đề 01",
-          part1Score: 3.0,
-          part2Score: 3.75,
-          part3Score: 2.5,
-          totalScore: 9.25,
-          durationMin: 90,
-          submittedAt: "18/10/2026 09:30"
-        }
-      ],
-      // Phiên thi hiện tại
+      topicLeaderboards: loadPersistedState("topicLeaderboards", defaultLeaderboards),
+      classList: loadPersistedState("classList", defaultClassList),
+      studentList: [],
+      examAttempts: loadPersistedState("examAttempts", defaultExamAttempts),
       currentExam: null,
       userAnswers: {},
       bookmarked: {},
-      examTimerSec: 5400, // 90 phút
+      examTimerSec: 5400,
       examTimerInterval: null,
       examResult: null,
       allowInstantReview: true
     };
+
+    function persistAll() {
+      savePersistedState("userAccounts", state.userAccounts);
+      savePersistedState("currentUser", state.currentUser);
+      savePersistedState("topicLeaderboards", state.topicLeaderboards);
+      savePersistedState("classList", state.classList);
+      savePersistedState("examAttempts", state.examAttempts);
+    }
 
     function renderMathInElement(container) {
       if (!container) return;
@@ -799,7 +787,6 @@
       }
     }
 
-    // Modal điều khiển
     function showModal(title, message, isWarning = false) {
       const modal = document.getElementById("app-modal");
       const header = document.getElementById("modal-header");
@@ -820,7 +807,6 @@
       document.getElementById("app-modal").classList.add("hidden");
     }
 
-    // Quản lý Modal Đăng nhập
     function openLoginModal(errorText = "") {
       const modal = document.getElementById("login-modal");
       const errBox = document.getElementById("login-error-msg");
@@ -858,6 +844,7 @@
       }
 
       state.currentUser = foundUser;
+      persistAll();
       closeLoginModal();
       showModal("Đăng nhập thành công", `Xin chào ${foundUser.name}!\nVai trò: ${foundUser.role === 'admin' ? 'Quản trị viên' : foundUser.role === 'teacher' ? 'Thầy Nguyễn Văn Thoan (Giáo viên)' : 'Học sinh: ' + foundUser.className}`);
       
@@ -868,6 +855,7 @@
 
     function handleLogout() {
       state.currentUser = null;
+      persistAll();
       document.getElementById("login-username").value = "";
       document.getElementById("login-password").value = "";
       renderNavigation();
@@ -900,7 +888,6 @@
         { id: "exam_room", label: "Phòng thi 90p", icon: "fa-pen-to-square" }
       ];
 
-      // Chỉ Admin và Giáo viên (Thầy Thoan) mới thấy Quản lý lớp & Ngân hàng đề
       if (!isStudent) {
         navLinks.push({ id: "class_management", label: "Quản lý Lớp & Tài khoản HS", icon: "fa-users-gear" });
         navLinks.push({ id: "question_bank", label: "Ngân hàng đề", icon: "fa-database" });
@@ -964,7 +951,6 @@
       renderMathInElement(main);
     }
 
-    // Tab 1: Dashboard
     function renderDashboard(container) {
       container.innerHTML = `
         <div class="space-y-6 max-w-5xl mx-auto pb-12">
@@ -995,7 +981,6 @@
             </div>
           </div>
 
-          <!-- Lưới thông tin chuyên đề & Dạng thức -->
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs space-y-2">
               <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-black">
@@ -1031,24 +1016,19 @@
       `;
     }
 
-    // Module: ÔN TẬP THEO CHUYÊN ĐỀ (4 dạng theo cấu trúc đề thi Sở Hải Phòng)
     function renderTopicPractice(container) {
       const currentTopic = TOPIC_CATALOG.find(t => t.id === state.selectedTopicId) || TOPIC_CATALOG[0];
-
-      // Lọc câu hỏi thuộc chuyên đề này và gán về 4 dạng chuẩn
       const topicQuestions = getTopicQuestions(currentTopic.id);
       const filteredQuestions = state.selectedFormFilter === 0 
         ? topicQuestions 
         : topicQuestions.filter(q => q.assignedForm === state.selectedFormFilter);
 
-      // Bảng xếp hạng học sinh ôn tập chuyên đề này (sắp xếp giảm dần theo điểm)
       const topicRanks = state.topicLeaderboards
         .filter(l => l.topicId === currentTopic.id)
         .sort((a, b) => b.totalPoints - a.totalPoints);
 
       container.innerHTML = `
         <div class="space-y-6 max-w-6xl mx-auto pb-12">
-          <!-- Thanh điều khiển chọn chuyên đề -->
           <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 sm:p-6">
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-5">
               <div>
@@ -1061,7 +1041,6 @@
                 <p class="text-slate-500 text-xs mt-1 leading-relaxed">${currentTopic.description}</p>
               </div>
 
-              <!-- Menu chọn nhanh chuyên đề -->
               <div class="shrink-0 flex items-center gap-2">
                 <label class="text-xs font-bold text-slate-500">Đổi chuyên đề:</label>
                 <select onchange="changeTopic(this.value)" class="text-xs font-semibold px-3 py-2 rounded-xl border border-slate-300 bg-white text-slate-800 focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-xs">
@@ -1072,7 +1051,6 @@
               </div>
             </div>
 
-            <!-- Tab 4 dạng câu hỏi chuẩn cấu trúc Sở GD&ĐT Hải Phòng -->
             <div class="mt-4 flex flex-wrap gap-2 text-xs font-semibold">
               <button onclick="filterForm(0)" class="px-3.5 py-2 rounded-xl border transition ${state.selectedFormFilter === 0 ? 'bg-sky-600 text-white border-sky-600 shadow-xs' : 'bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100'}">
                 Tất cả 4 dạng (${topicQuestions.length} câu)
@@ -1091,7 +1069,6 @@
           </div>
 
           <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <!-- Cột trái (2/3): Danh sách câu hỏi ôn tập theo 4 dạng -->
             <div class="lg:col-span-2 space-y-4">
               ${filteredQuestions.length === 0 ? `
                 <div class="p-8 text-center bg-white rounded-2xl border border-slate-200 text-slate-500 text-xs">
@@ -1173,7 +1150,6 @@
                 `;
               }).join("")}
 
-              <!-- Nút nộp bài ôn tập -->
               <div class="pt-2 flex justify-end">
                 <button onclick="submitTopicPractice()" class="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs sm:text-sm rounded-xl shadow-md transition flex items-center gap-2">
                   <i class="fa-solid fa-calculator"></i> Nộp bài ôn tập & Tính điểm tích lũy
@@ -1181,7 +1157,6 @@
               </div>
             </div>
 
-            <!-- Cột phải (1/3): Bảng danh sách học sinh đã ôn tập (Xếp theo thứ tự điểm) -->
             <div class="lg:col-span-1 space-y-4">
               <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs sticky top-20">
                 <div class="flex items-center justify-between border-b border-slate-100 pb-3">
@@ -1238,14 +1213,13 @@
       `;
     }
 
-    // Hàm ánh xạ câu hỏi vào 4 dạng đề thi chuẩn Sở GD&ĐT Hải Phòng
     function getTopicQuestions(topicId) {
       if (topicId === "topic-can-thuc") {
         return [
-          { ...QUESTION_BANK[0], assignedForm: 1 }, // Nhận biết
-          { ...QUESTION_BANK[1], assignedForm: 2 }, // Thông hiểu
-          { ...QUESTION_BANK[12], assignedForm: 3 }, // Đúng/Sai
-          { ...QUESTION_BANK[18], assignedForm: 4 }  // Vận dụng/Trả lời ngắn
+          { ...QUESTION_BANK[0], assignedForm: 1 },
+          { ...QUESTION_BANK[1], assignedForm: 2 },
+          { ...QUESTION_BANK[12], assignedForm: 3 },
+          { ...QUESTION_BANK[18], assignedForm: 4 }
         ];
       } else if (topicId === "topic-ham-so") {
         return [
@@ -1268,7 +1242,7 @@
           { ...QUESTION_BANK[13], assignedForm: 3 },
           { ...QUESTION_BANK[17], assignedForm: 4 }
         ];
-      } else { // Thống kê & xác suất
+      } else {
         return [
           { ...QUESTION_BANK[9], assignedForm: 1 },
           { ...QUESTION_BANK[10], assignedForm: 2 },
@@ -1306,7 +1280,6 @@
       state.topicPracticeAnswers[qId] = val;
     }
 
-    // Chấm điểm bài ôn tập chuyên đề & đưa vào Bảng xếp hạng điểm số
     function submitTopicPractice() {
       const currentTopic = TOPIC_CATALOG.find(t => t.id === state.selectedTopicId);
       const questions = getTopicQuestions(currentTopic.id);
@@ -1350,7 +1323,6 @@
       totalEarned = Math.round(totalEarned * 100) / 100;
       state.topicResult = res;
 
-      // Cập nhật hoặc ghi mới vào Bảng xếp hạng ôn tập
       const nowStr = new Date().toLocaleTimeString().slice(0, 5) + " " + new Date().toLocaleDateString();
       const existingRank = state.topicLeaderboards.find(l => l.studentId === state.currentUser.id && l.topicId === currentTopic.id);
 
@@ -1362,7 +1334,7 @@
           id: "TL-" + Date.now(),
           studentId: state.currentUser.id,
           studentName: state.currentUser.name,
-          className: state.currentUser.role === "student" ? "Lớp 9A1" : "Giáo viên",
+          className: state.currentUser.role === "student" ? state.currentUser.className : "Giáo viên",
           topicId: currentTopic.id,
           topicName: currentTopic.name,
           totalPoints: totalEarned,
@@ -1373,6 +1345,7 @@
         });
       }
 
+      persistAll();
       showModal("Hoàn thành ôn tập!", `Em đã đạt ${totalEarned} / ${maxPoints} điểm trong chuyên đề "${currentTopic.name}". Điểm số đã được cập nhật vào Bảng vàng vinh danh!`);
       renderContent();
     }
@@ -1390,7 +1363,7 @@
       state.userAnswers = {};
       state.bookmarked = {};
       state.examResult = null;
-      state.examTimerSec = 5400; // 90 phút
+      state.examTimerSec = 5400;
 
       if (state.examTimerInterval) clearInterval(state.examTimerInterval);
       state.examTimerInterval = setInterval(() => {
@@ -1449,7 +1422,6 @@
               </div>
             </div>
 
-            <!-- Danh sách câu hỏi -->
             <div class="space-y-4">
               ${state.currentExam.questions.map((q, idx) => `
                 <div id="q-box-${q.id}" class="bg-white rounded-2xl border p-4 sm:p-6 transition ${state.bookmarked[q.id] ? 'border-amber-400 bg-amber-50/20' : 'border-slate-200'}">
@@ -1516,7 +1488,6 @@
               `).join("")}
             </div>
 
-            <!-- Nút nộp bài -->
             <div class="pt-4 flex justify-end">
               <button onclick="submitExam(false)" class="px-8 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs sm:text-sm rounded-xl shadow-md transition flex items-center gap-2">
                 <i class="fa-solid fa-paper-plane"></i> Nộp bài thi chính thức
@@ -1524,7 +1495,6 @@
             </div>
           </div>
 
-          <!-- Cột bên phải: Bảng điều hướng câu hỏi & Thời gian -->
           <div class="lg:col-span-1 space-y-4">
             <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs sticky top-20 space-y-4">
               <div class="text-center p-3 bg-sky-50 rounded-xl border border-sky-100">
@@ -1673,6 +1643,7 @@
         submittedAt: state.examResult.submittedAt
       });
 
+      persistAll();
       showModal("Nộp bài thành công", `Tổng điểm: ${totalScore}/10 điểm\n- Phần I: ${p1Score}đ\n- Phần II: ${p2Score}đ\n- Phần III: ${p3Score}đ\nThời gian làm: ${durationMin} phút.`);
       renderContent();
     }
@@ -1716,7 +1687,6 @@
       `;
     }
 
-    // Quản lý Lớp học & Tạo tài khoản cho Học sinh (Dành cho Admin và Thầy Thoan)
     function renderClassManagement(container) {
       if (state.currentUser.role === "student") {
         container.innerHTML = `
@@ -1731,7 +1701,6 @@
 
       container.innerHTML = `
         <div class="space-y-6 max-w-6xl mx-auto pb-12">
-          <!-- Header thanh tác vụ -->
           <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
               <span class="text-[11px] font-bold text-sky-700 bg-sky-50 px-2.5 py-1 rounded-full uppercase tracking-wider">
@@ -1755,7 +1724,6 @@
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <!-- Cột trái: Quản lý danh sách Lớp học -->
             <div class="md:col-span-1 space-y-4">
               <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs space-y-3">
                 <div class="flex items-center justify-between border-b pb-2">
@@ -1764,7 +1732,7 @@
                 </div>
                 <div class="space-y-2">
                   ${state.classList.map((cls) => {
-                    const countInClass = students.filter(s => s.classId === cls.id).length;
+                    const countInClass = students.filter(s => s.classId === cls.id || s.className.includes(cls.name.split(" - ")[0])).length;
                     return `
                       <div class="p-3 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-slate-50 transition text-xs">
                         <div class="font-bold text-slate-800">${cls.name}</div>
@@ -1778,14 +1746,13 @@
                 </div>
               </div>
 
-              <!-- Hướng dẫn cấp tài khoản -->
               <div class="bg-sky-50 border border-sky-100 rounded-2xl p-4 text-xs text-sky-900 space-y-2">
                 <div class="font-bold flex items-center gap-1.5">
                   <i class="fa-solid fa-shield-halved"></i> Quy tắc bảo mật:
                 </div>
                 <p class="text-[11px] leading-relaxed text-sky-800">
-                  - Học sinh không thể tự đăng ký tự do để tránh gian lận điểm và lẫn lộn lớp học.<br/>
-                  - Admin và Thầy Thoan cấp tài khoản theo lớp và xuất danh sách gửi trực tiếp cho phụ huynh/học sinh.
+                  - Tài khoản học sinh được lưu trữ vĩnh viễn trên trình duyệt thông qua cơ chế an toàn.<br/>
+                  - Dữ liệu tài khoản mới tạo được lưu ngay lập tức và đồng bộ vào hệ thống.
                 </p>
                 <button onclick="exportStudentCredentialsCSV()" class="w-full mt-1 py-2 bg-white hover:bg-sky-100 text-sky-800 font-bold rounded-lg border border-sky-200 shadow-2xs transition flex items-center justify-center gap-1 text-[11px]">
                   <i class="fa-solid fa-download"></i> Xuất file tài khoản đã cấp
@@ -1793,20 +1760,19 @@
               </div>
             </div>
 
-            <!-- Cột phải: Danh sách tài khoản Học sinh đã tạo -->
             <div class="md:col-span-3 bg-white rounded-2xl shadow-sm border border-slate-200 p-5 space-y-4">
               <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b pb-3">
                 <div>
                   <h3 class="font-bold text-sm text-slate-800 flex items-center gap-2">
                     <i class="fa-solid fa-address-card text-sky-600"></i> Danh sách Học sinh đã cấp tài khoản (${students.length} em)
                   </h3>
-                  <p class="text-[11px] text-slate-400">Chỉ học sinh có trong danh sách dưới đây mới có quyền đăng nhập làm bài</p>
+                  <p class="text-[11px] text-slate-400">Danh sách tài khoản học sinh đã được lưu lại trên hệ thống</p>
                 </div>
               </div>
 
               ${students.length === 0 ? `
                 <div class="py-12 text-center text-slate-400 text-xs">
-                  Chưa có tài khoản học sinh nào được cấp. Thầy/Cô hãy bấm <strong>"Cấp theo danh sách lớp"</strong> hoặc <strong>"Tạo 1 tài khoản"</strong> ở trên để tạo tài khoản cho học sinh.
+                  Chưa có tài khoản học sinh nào được cấp. Thầy/Cô hãy bấm <strong>"Cấp theo danh sách lớp"</strong> hoặc <strong>"Tạo 1 tài khoản"</strong> ở trên để thêm học sinh.
                 </div>
               ` : `
                 <div class="overflow-x-auto">
@@ -1854,7 +1820,7 @@
       `;
     }
 
-    // Tạo đơn lẻ 1 tài khoản học sinh
+    // Hàm tạo tài khoản học sinh đơn lẻ (Đã fix lỗi lưu dữ liệu thông qua persistAll())
     function promptCreateSingleStudent() {
       const name = prompt("1. Nhập Họ và Tên học sinh (Ví dụ: Nguyễn Minh Đức):");
       if (!name) return;
@@ -1864,7 +1830,6 @@
       const username = prompt("2. Nhập Tên đăng nhập cho học sinh (Viết liền không dấu):", usernameDefault);
       if (!username) return;
 
-      // Kiểm tra trùng tên đăng nhập
       if (state.userAccounts.some(u => u.username.toLowerCase() === username.trim().toLowerCase())) {
         showModal("Lỗi trùng lặp", "Tên đăng nhập này đã tồn tại trên hệ thống! Vui lòng chọn tên đăng nhập khác.", true);
         return;
@@ -1886,11 +1851,12 @@
       };
 
       state.userAccounts.push(newStudent);
-      showModal("Cấp tài khoản thành công", `Đã cấp tài khoản cho học sinh: ${name}\nTên đăng nhập: ${username}\nMật khẩu: ${password}`);
+      persistAll(); // Lưu ngay vào localStorage
+      showModal("Cấp tài khoản thành công", `Đã lưu thành công tài khoản cho học sinh: ${name}\nTên đăng nhập: ${username}\nMật khẩu: ${password}`);
       renderContent();
     }
 
-    // Cấp hàng loạt tài khoản học sinh theo danh sách lớp
+    // Hàm tạo hàng loạt tài khoản học sinh theo danh sách lớp (Đã fix lỗi lưu dữ liệu thông qua persistAll())
     function promptBatchCreateStudents() {
       const sampleText = "Trần Thị Mai Anh, 9A1\nNguyễn Minh Đức, 9A1\nPhạm Hải Đăng, 9A2\nLê Hoàng Nam, 9A2";
       const input = prompt(
@@ -1906,7 +1872,10 @@
         const parts = line.split(",").map(p => p.trim());
         if (parts.length >= 1 && parts[0]) {
           const stName = parts[0];
-          const className = parts[1] || state.classList[0]?.name || "Lớp 9A1";
+          const classNameInput = parts[1] || "9A1";
+          const matchedClass = state.classList.find(c => c.name.includes(classNameInput) || c.joinCode.toLowerCase() === classNameInput.toLowerCase());
+          const classNameFull = matchedClass ? matchedClass.name : `Lớp ${classNameInput} - THCS Hải Phòng`;
+
           const rawSlug = removeVietnameseTones(stName.toLowerCase()).replace(/\s+/g, "");
           let uName = "hs." + rawSlug;
           let counter = 1;
@@ -1918,45 +1887,45 @@
           state.userAccounts.push({
             id: "usr-st-" + Date.now() + Math.floor(Math.random() * 1000),
             username: uName,
-            password: "hp" + Math.floor(100000 + Math.random() * 900000), // Mật khẩu 6 số ngẫu nhiên an toàn
+            password: "hp" + Math.floor(100000 + Math.random() * 900000),
             name: stName,
             email: `${uName}@toan9hp.edu.vn`,
             role: "student",
-            classId: state.classList.find(c => c.name.includes(className))?.id || state.classList[0]?.id,
-            className: className,
+            classId: matchedClass ? matchedClass.id : "class-9a1",
+            className: classNameFull,
             createdAt: new Date().toLocaleDateString()
           });
           count++;
         }
       });
 
-      showModal("Hoàn tất cấp tài khoản hàng loạt", `Hệ thống đã tự động cấp thành công ${count} tài khoản học sinh!\nThầy/Cô có thể bấm "Xuất file tài khoản đã cấp" để gửi phiếu đăng nhập cho các em.`);
+      persistAll(); // Lưu ngay lập tức vào localStorage để chống mất dữ liệu khi F5
+      showModal("Hoàn tất cấp tài khoản hàng loạt", `Hệ thống đã lưu thành công ${count} tài khoản học sinh vào cơ sở dữ liệu!\nThầy/Cô có thể yên tâm chuyển tab hoặc tải lại trang.`);
       renderContent();
     }
 
-    // Đổi mật khẩu học sinh
     function promptResetPassword(userId) {
       const u = state.userAccounts.find(x => x.id === userId);
       if (!u) return;
       const newPass = prompt(`Nhập mật khẩu mới cho học sinh ${u.name}:`, "123456");
       if (newPass) {
         u.password = newPass.trim();
+        persistAll();
         showModal("Thành công", `Đã cập nhật mật khẩu mới cho ${u.name}: ${u.password}`);
         renderContent();
       }
     }
 
-    // Xóa tài khoản học sinh
     function deleteStudentAccount(userId) {
       const u = state.userAccounts.find(x => x.id === userId);
       if (!u) return;
       if (confirm(`Thầy/Cô có chắc chắn muốn xóa tài khoản của học sinh ${u.name} (${u.username}) không?`)) {
         state.userAccounts = state.userAccounts.filter(x => x.id !== userId);
+        persistAll();
         renderContent();
       }
     }
 
-    // Xuất file thông tin tài khoản học sinh đã cấp ra CSV
     function exportStudentCredentialsCSV() {
       const students = state.userAccounts.filter(u => u.role === "student");
       if (students.length === 0) {
@@ -1970,7 +1939,6 @@
       downloadFile(csv, "Danh_sach_tai_khoan_HocSinh_Toan9_HaiPhong.csv");
     }
 
-    // Hàm tiện ích loại bỏ dấu tiếng Việt để sinh tên đăng nhập
     function removeVietnameseTones(str) {
       str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
       str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
@@ -1989,24 +1957,8 @@
       if (!name) return;
       const code = "HP" + Math.floor(100 + Math.random() * 900);
       state.classList.push({ id: "cls-" + Date.now(), name, joinCode: code });
+      persistAll();
       showModal("Thành công", `Đã tạo lớp ${name} thành công với mã ${code}`);
-      renderContent();
-    }
-
-    function promptAddStudent() {
-      const name = prompt("Nhập họ tên học sinh:");
-      if (!name) return;
-      const email = prompt("Nhập email/tên đăng nhập:");
-      if (!email) return;
-      state.studentList.push({
-        id: "st-" + Date.now(),
-        name,
-        email,
-        classId: state.classList[0]?.id || "",
-        totalExams: 0,
-        avgScore: 0
-      });
-      showModal("Thành công", `Đã thêm học sinh ${name}`);
       renderContent();
     }
 
@@ -2114,7 +2066,6 @@
       downloadFile(csv, "Bang_diem_Toan9_HaiPhong.csv");
     }
 
-    // Tải tệp dữ liệu tương thích an toàn trong iFrame sandbox
     function downloadFile(content, fileName) {
       const blob = new Blob(["\uFEFF" + content], { type: "text/csv;charset=utf-8;" });
       const url = URL.createObjectURL(blob);
@@ -2127,30 +2078,12 @@
       showModal("Thành công", `Đã tải xuống tệp: ${fileName}`);
     }
 
-    // Đăng ký sự kiện an toàn với kiểm tra phần tử tồn tại
-    const quickSwitchBtn = document.getElementById("btn-quick-switch-role");
-    if (quickSwitchBtn) {
-      quickSwitchBtn.addEventListener("click", () => {
-        if (!state.currentUser || state.currentUser.role === "teacher") {
-          state.currentUser = { id: "student-01", name: "Nguyễn Minh Đức", email: "duc.nm9a1@student.edu.vn", role: "student", className: "Lớp 9A1" };
-          showModal("Chuyển vai trò", "Hiện tại bạn đang ở vai trò HỌC SINH (Chỉ xem điểm & bài thi cá nhân).");
-        } else if (state.currentUser.role === "student") {
-          state.currentUser = { id: "admin-01", name: "Quản trị viên Hệ thống", email: "admin@toan9hp.edu.vn", role: "admin", className: "Toàn trường" };
-          showModal("Chuyển vai trò", "Hiện tại bạn đang ở vai trò QUẢN TRỊ VIÊN.");
-        } else {
-          state.currentUser = { id: "usr-teacher-01", name: "Thầy Nguyễn Văn Thoan", email: "thoan.nv@haiphong.edu.vn", role: "teacher", className: "Giáo viên Toán" };
-          showModal("Chuyển vai trò", "Hiện tại bạn đang ở vai trò GIÁO VIÊN: Thầy Nguyễn Văn Thoan.");
-        }
-        renderNavigation();
-        renderContent();
-      });
-    }
-
     window.addEventListener("DOMContentLoaded", () => {
-      // Khởi động hệ thống: yêu cầu đăng nhập trước
       renderNavigation();
       renderContent();
-      openLoginModal();
+      if (!state.currentUser) {
+        openLoginModal();
+      }
     });
   </script>
 </body>
